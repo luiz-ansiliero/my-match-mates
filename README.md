@@ -1,6 +1,6 @@
 # My MatchMates — Duo & Team Finder
 
-**Autor:** [Seu Nome Completo]  
+**Autor:** Luiz Eduardo Ferreira Ansiliero  
 **Curso:** Tecnologia em Sistemas para Internet — UTFPR  
 **Disciplina:** Desenvolvimento de Páginas Web com Framework e CSS  
 **Framework CSS:** Bootstrap 5  
