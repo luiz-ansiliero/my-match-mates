@@ -8,31 +8,33 @@ A persistência de dados de anúncios criados pelos usuários é realizada via r
 
 ## 2. Diagrama de Modelo de Dados (Mermaid)
 
+## 2. Diagrama de Modelo de Dados (Mermaid)
+
 ```mermaid
 erDiagram
-    JOGADOR_ANUNCIO ||--o{ COMPATIBILIDADE : busca
-    JOGADOR_ANUNCIO {
+    PLAYER_MATCH ||--o{ COMPATIBILITY : searches
+    PLAYER_MATCH {
         string id PK "Identificador único do anúncio"
         string nick "Nick do jogador no jogo"
         string tag "Tag do Riot ID (ex: BR1)"
         string discord "Usuário do Discord"
         string eloId "Código do Elo selecionado"
-        string eloNome "Nome do Elo (ex: Ouro 3)"
-        string eloIcone "URL do ícone obtido da API"
-        string agenteNome "Nome do Agente (ex: Jett)"
-        string agenteIcone "URL do ícone obtido da API"
-        string armaFavorita "Nome da arma favorita"
-        string periodoJogo "Horário disponível"
-        string descricao "Texto descritivo do anúncio"
+        string eloName "Nome do Elo (ex: Ouro 3)"
+        string eloIcon "URL do ícone obtido da API"
+        string agentName "Nome do Agente (ex: Jett)"
+        string agentIcon "URL do ícone obtido da API"
+        string favoriteWeapon "Nome da arma favorita"
+        string playTime "Horário disponível"
+        string description "Texto descritivo do anúncio"
     }
 
-    VALORANT_API_DADOS {
+    VALORANT_API_DATA {
         string uuid PK "ID da entidade na API externa"
         string displayName "Nome do Agente/Arma/Elo"
         string displayIcon "URL do recurso visual oficial"
     }
 
-    JOGADOR_ANUNCIO }|..|{ VALORANT_API_DADOS : "consome imagens de"
+    PLAYER_MATCH }|..|{ VALORANT_API_DATA : "fetches media from"
 ```
 
 ## 3. Descrição das Entidades
