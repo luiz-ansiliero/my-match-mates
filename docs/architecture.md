@@ -8,8 +8,6 @@ A persistência de dados de anúncios criados pelos usuários é realizada via r
 
 ## 2. Diagrama de Modelo de Dados (Mermaid)
 
-## 2. Diagrama de Modelo de Dados (Mermaid)
-
 ```mermaid
 erDiagram
     PLAYER_MATCH ||--o{ COMPATIBILITY : searches
