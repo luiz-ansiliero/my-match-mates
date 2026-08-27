@@ -1,49 +1,63 @@
-# Software Design Document (Architecture) — My MatchMates
+# 🛠️ Especificação Técnica (Tech Spec) — My MatchMates
 
-## 1. Visão Geral da Arquitetura
+Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server e Valorant-API) necessários para o funcionamento da plataforma de matchmaking **My MatchMates**.
 
-A aplicação adota uma arquitetura Client-Side Rendering (CSR) construída com HTML5 semântico, CSS3/Sass, Bootstrap 5 e JavaScript Vanilla (ES6+).
+## 1. Modelo de Dados (Diagrama ER)
 
-A persistência de dados de anúncios criados pelos usuários é realizada via requisições HTTP para uma API Fake local (JSON Server), enquanto imagens e metadados oficiais do jogo (Agentes, Armas e Emblemas de Elo) são consumidos assincronamente da API pública **Valorant-API**.
-
-## 2. Diagrama de Modelo de Dados (Mermaid)
+Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam aos dados da API externa pública.
 
 ```mermaid
 erDiagram
-    PLAYER_MATCH ||--o{ COMPATIBILITY : searches
+    PLAYER_MATCH ||--o{ MATCH_APPLICATION : "recebe"
     PLAYER_MATCH {
-        string id PK "Identificador único do anúncio"
+        string id PK "Gerado automaticamente pelo JSON Server"
         string nick "Nick do jogador no jogo"
         string tag "Tag do Riot ID (ex: BR1)"
-        string discord "Usuário do Discord"
-        string eloId "Código do Elo selecionado"
+        string discord "Usuário e tag do Discord para contato"
+        string eloId "ID do Elo obtido da Valorant-API"
         string eloName "Nome do Elo (ex: Ouro 3)"
-        string eloIcon "URL do ícone obtido da API"
-        string agentName "Nome do Agente (ex: Jett)"
-        string agentIcon "URL do ícone obtido da API"
-        string favoriteWeapon "Nome da arma favorita"
-        string playTime "Horário disponível"
-        string description "Texto descritivo do anúncio"
+        string eloIcon "URL do emblema oficial"
+        string agentName "Nome do Agente principal (ex: Jett)"
+        string agentIcon "URL da foto do Agente"
+        string favoriteWeapon "Arma favorita selecionada"
+        string playTime "Período disponível para jogar"
+        string description "Texto descritivo das preferências de jogo"
     }
-
-    VALORANT_API_DATA {
-        string uuid PK "ID da entidade na API externa"
-        string displayName "Nome do Agente/Arma/Elo"
-        string displayIcon "URL do recurso visual oficial"
+    MATCH_APPLICATION {
+        string id PK
+        string matchId FK "Vínculo com o Anúncio principal"
+        string applicantNick "Nick de quem demonstrou interesse"
+        string applicantDiscord "Discord de contato do interessado"
+        string status "PENDING, ACCEPTED ou REJECTED"
     }
-
-    PLAYER_MATCH }|..|{ VALORANT_API_DATA : "fetches media from"
 ```
 
-## 3. Descrição das Entidades
-
-- **JOGADOR_ANUNCIO (JSON Server / db.json):** Entidade principal do sistema. Armazena os dados cadastrados pelos usuários via formulário e persiste os registros na API Fake local.
-- **VALORANT_API_DADOS (API Pública Externa):** Dados dinâmicos de leitura consumidos da URL `https://valorant-api.com/v1/` para preencher os seletores do formulário e fornecer os ativos visuais (imagens) para a entidade de anúncios.
-
-## 4. Tecnologias e Dependências
-
-- **Front-end:** HTML5, CSS3, Sass (SCSS), JavaScript (ES6+ Fetch API).
-- **Framework CSS:** Bootstrap 5 (Grid System, Flexbox, Cards, Modais, Navbar).
-- **Bibliotecas JS:** jQuery + jQuery Mask Plugin.
-- **Ambiente de Dados:** JSON Server (`db.json`) e Web Storage (`localStorage`).
-- **Hospedagem:** GitHub Pages.
+```
+    {
+  "anuncios": [
+    {
+      "id": "1",
+      "nick": "SovaMain",
+      "tag": "BR1",
+      "discord": "sova_god#1234",
+      "eloId": "gold_3",
+      "eloName": "Ouro 3",
+      "eloIcon": "[https://media.valorant-api.com/competitivetiers/5641823f-4b7c-16d5-aa63-d1b22340d588/14/smallicon.png](https://media.valorant-api.com/competitivetiers/5641823f-4b7c-16d5-aa63-d1b22340d588/14/smallicon.png)",
+      "agentName": "Sova",
+      "agentIcon": "[https://media.valorant-api.com/agents/320b2a18-4d9b-a01c-abc0-19a4577b7068/displayicon.png](https://media.valorant-api.com/agents/320b2a18-4d9b-a01c-abc0-19a4577b7068/displayicon.png)",
+      "favoriteWeapon": "Vandal",
+      "playTime": "Noturno (19h - 23h)",
+      "description": "Procuro duo focado em subir para o Platina. Jogo focado na comunicação e pixel de revelação."
+    }
+  ],
+  "solicitacoes": [
+    {
+      "id": "1",
+      "matchId": "1",
+      "applicantNick": "JettCarry",
+      "applicantDiscord": "jett_diff#9999",
+      "status": "PENDING"
+    }
+  ]
+}
+```
