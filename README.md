@@ -24,8 +24,8 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ## 🎨 Design
 
 - 🎨 **Design System** — Identidade visual (Cores, Tipografia e Componentes).
-- 🖼️ **Protótipo no Figma** — Telas interativas da aplicação (`https://www.figma.com/design/qw56msjB6Fe8T174nsssLw/My-match-mates?node-id=46-3707&t=DkWPPn1sw6QDnwZH-1`).
-- 🌐 **Site em Produção** — GitHub Pages (`https://github.com/luiz-ansiliero/my-match-mates.git`)
+- 🖼️ **Protótipo no Figma** — Telas interativas da aplicação (https://www.figma.com/design/qw56msjB6Fe8T174nsssLw/My-match-mates?node-id=46-3707&t=DkWPPn1sw6QDnwZH-1).
+- 🌐 **Site em Produção** — GitHub Pages (https://github.com/luiz-ansiliero/my-match-mates.git)
 
 ---
 
