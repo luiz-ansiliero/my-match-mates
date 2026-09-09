@@ -40,23 +40,25 @@ erDiagram
 
 ```
 
+```
 {
-"users": [
-{
-"id": "1",
-"username": "impostodereyna",
-"password": "senha_segura_aqui",
-"riotId": "ImpostoDeReyna#2204",
-"elo": "Diamante",
-"eloDivision": "I",
-"activeLobby": true,
-"preferredRoles": ["Controlador", "Duelista"],
-"favoriteAgent": "Reyna",
-"preferredAgents": ["Omen", "Reyna"],
-"aptAgents": ["Reyna", "Omen", "Jett", "Killjoy", "Sova", "Viper", "Fade", "Clove"],
-"activeDays": ["Sex", "Sáb", "Dom"],
-"timeSlots": ["Noite", "Madrugada"],
-"communication": ["Microfone", "Discord Call"]
+  "users": [
+    {
+      "id": "1",
+      "username": "impostodereyna",
+      "password": "senha_segura_aqui",
+      "riotId": "ImpostoDeReyna#2204",
+      "elo": "Diamante",
+      "eloDivision": "I",
+      "activeLobby": true,
+      "preferredRoles": ["Controlador", "Duelista"],
+      "favoriteAgent": "Reyna",
+      "preferredAgents": ["Omen", "Reyna"],
+      "aptAgents": ["Reyna", "Omen", "Jett", "Killjoy", "Sova", "Viper", "Fade", "Clove"],
+      "activeDays": ["Sex", "Sáb", "Dom"],
+      "timeSlots": ["Noite", "Madrugada"],
+      "communication": ["Microfone", "Discord Call"]
+    }
+  ]
 }
-]
-}
+```
