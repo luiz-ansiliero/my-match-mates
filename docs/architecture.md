@@ -1,63 +1,62 @@
 # 🛠️ Especificação Técnica (Tech Spec) — My MatchMates
 
-Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server e Valorant-API) necessários para o funcionamento da plataforma de matchmaking **My MatchMates**.
+Este documento detalha a arquitetura técnica, a stack tecnológica, o modelo de dados e os contratos de API do sistema **My MatchMates**.
 
-## 1. Modelo de Dados (Diagrama ER)
+## 1. Stack Tecnológica
 
-Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam aos dados da API externa pública.
+- **Framework CSS:** Bulma CSS (utilizado para grid responsivo flexbox, formulários e estrutura base de componentes).
+- **Estilização Customizada:** Sass/CSS customizado para aplicar o Design System dark/neon do Valorant sobre o Bulma.
+- **JavaScript:** Vanilla JS + jQuery para manipulação do DOM, controle do formulário multi-etapas e lógica dos modais.
+- **APIs:** JSON Server (API local para armazenamento) e Valorant-API (API pública para mídias oficiais).
+
+---
+
+## 2. Modelo de Dados (Diagrama ER)
 
 ```mermaid
 erDiagram
-    PLAYER_MATCH ||--o{ MATCH_APPLICATION : "recebe"
-    PLAYER_MATCH {
-        string id PK "Gerado automaticamente pelo JSON Server"
-        string nick "Nick do jogador no jogo"
-        string tag "Tag do Riot ID (ex: BR1)"
-        string discord "Usuário e tag do Discord para contato"
-        string eloId "ID do Elo obtido da Valorant-API"
-        string eloName "Nome do Elo (ex: Ouro 3)"
-        string eloIcon "URL do emblema oficial"
-        string agentName "Nome do Agente principal (ex: Jett)"
-        string agentIcon "URL da foto do Agente"
-        string favoriteWeapon "Arma favorita selecionada"
-        string playTime "Período disponível para jogar"
-        string description "Texto descritivo das preferências de jogo"
+    USER ||--o{ MATCH_PREFERENCE : configures
+    USER {
+        string id PK "Gerado pelo JSON Server"
+        string username "Login do usuário"
+        string password "Senha do usuário"
+        string riotId "Nome de exibição no jogo (ex: ImpostoDeReyna#2204)"
+        string elo "Patente atual (ex: Diamante)"
+        string eloDivision "Sub-divisão do elo (I, II, III)"
+        boolean activeLobby "Status de disponibilidade no feed"
     }
-    MATCH_APPLICATION {
+
+    MATCH_PREFERENCE {
         string id PK
-        string matchId FK "Vínculo com o Anúncio principal"
-        string applicantNick "Nick de quem demonstrou interesse"
-        string applicantDiscord "Discord de contato do interessado"
-        string status "PENDING, ACCEPTED ou REJECTED"
+        string userId FK "Vínculo com a conta do jogador"
+        string preferredRoles "Funções selecionadas (Duelista, Controlador, etc.)"
+        string favoriteAgent "Agente exibido como foto de perfil"
+        string preferredAgents "Lista de até 2 agentes prioritários"
+        string aptAgents "Lista de até 8 agentes conhecidos"
+        string activeDays "Dias da semana ativos"
+        string timeSlots "Faixas horárias disponíveis"
+        string communication "Tipos de comunicação aceitos"
     }
-```
 
 ```
-    {
-  "anuncios": [
-    {
-      "id": "1",
-      "nick": "SovaMain",
-      "tag": "BR1",
-      "discord": "sova_god#1234",
-      "eloId": "gold_3",
-      "eloName": "Ouro 3",
-      "eloIcon": "[https://media.valorant-api.com/competitivetiers/5641823f-4b7c-16d5-aa63-d1b22340d588/14/smallicon.png](https://media.valorant-api.com/competitivetiers/5641823f-4b7c-16d5-aa63-d1b22340d588/14/smallicon.png)",
-      "agentName": "Sova",
-      "agentIcon": "[https://media.valorant-api.com/agents/320b2a18-4d9b-a01c-abc0-19a4577b7068/displayicon.png](https://media.valorant-api.com/agents/320b2a18-4d9b-a01c-abc0-19a4577b7068/displayicon.png)",
-      "favoriteWeapon": "Vandal",
-      "playTime": "Noturno (19h - 23h)",
-      "description": "Procuro duo focado em subir para o Platina. Jogo focado na comunicação e pixel de revelação."
-    }
-  ],
-  "solicitacoes": [
-    {
-      "id": "1",
-      "matchId": "1",
-      "applicantNick": "JettCarry",
-      "applicantDiscord": "jett_diff#9999",
-      "status": "PENDING"
-    }
-  ]
+
+{
+"users": [
+{
+"id": "1",
+"username": "impostodereyna",
+"password": "senha_segura_aqui",
+"riotId": "ImpostoDeReyna#2204",
+"elo": "Diamante",
+"eloDivision": "I",
+"activeLobby": true,
+"preferredRoles": ["Controlador", "Duelista"],
+"favoriteAgent": "Reyna",
+"preferredAgents": ["Omen", "Reyna"],
+"aptAgents": ["Reyna", "Omen", "Jett", "Killjoy", "Sova", "Viper", "Fade", "Clove"],
+"activeDays": ["Sex", "Sáb", "Dom"],
+"timeSlots": ["Noite", "Madrugada"],
+"communication": ["Microfone", "Discord Call"]
 }
-```
+]
+}

@@ -1,14 +1,14 @@
 # MyMatchMates — Duo & Team Finder
 
-**Autor:** Luiz Eduardo Ferreira Ansiliero
+**Autor:** Luiz Eduardo Ferreira Ansiliero  
 **Curso:** Tecnologia em Sistemas para Internet — UTFPR  
 **Disciplina:** Desenvolvimento de Páginas Web com Framework e CSS
 
 ---
 
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web voltada para a conexão de jogadores e formação de times no cenário de eSports (iniciando com suporte ao jogo Valorant). O sistema permite o cadastro de anúncios de jogadores com suas respectivas preferências (elo, agente, armas favoritas e horários) e a filtragem de duos para partidas competitivas.
+Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web voltada para a conexão de jogadores e formação de times no cenário de eSports (iniciando com suporte ao jogo Valorant). O sistema permite a autenticação de usuários, cadastro de perfil tático via formulário multi-etapas com seleção de preferências (Elo, Sub-divisão, Funções, Pool de Agentes, Disponibilidade e Comunicação), exibição de feed interativo e matchmaking instantâneo.
 
-O frontend da aplicação foi desenvolvido utilizando HTML5, CSS3/Sass e JavaScript (com jQuery), consumindo a API pública **Valorant-API** para mídias oficiais do jogo e o **JSON Server** para a simulação de persistência dos anúncios de usuários.
+O frontend da aplicação foi desenvolvido utilizando HTML5, Bulma CSS com Sass/SCSS e JavaScript (com jQuery), consumindo a API pública **Valorant-API** para mídias oficiais do jogo e o **JSON Server** para a simulação de persistência das contas e preferências dos usuários.
 
 ---
 
@@ -17,25 +17,25 @@ O frontend da aplicação foi desenvolvido utilizando HTML5, CSS3/Sass e JavaScr
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
 - 📄 [Product Requirements Document (PRD)](docs/prd.md) — Visão geral, atores e histórias de usuário.
-- 🛠️ [Especificação Técnica (Tech Spec)](docs/architecture.md) — Diagrama de banco de dados (DER em Mermaid), arquitetura e rotas da API.
+- 🛠️ [Especificação Técnica (Tech Spec)](docs/architecture.md) — Diagrama de banco de dados (DER em Mermaid), stack tecnológica e rotas da API.
 
 ---
 
 ## 🎨 Design
 
 - 🎨 **Design System** — Identidade visual (Cores, Tipografia e Componentes).
-- 🖼️ **Protótipo no Figma** — Telas interativas da aplicação.
-- 🌐 **Site em Produção** — GitHub Pages (`https://seu-usuario.github.io/my-match-mates/`)
+- 🖼️ **Protótipo no Figma** — Telas interativas da aplicação (`https://www.figma.com/design/qw56msjB6Fe8T174nsssLw/My-match-mates?node-id=46-3707&t=DkWPPn1sw6QDnwZH-1`).
+- 🌐 **Site em Produção** — GitHub Pages (`https://github.com/luiz-ansiliero/my-match-mates.git`)
 
 ---
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** Bootstrap 5
+- **Framework CSS:** Bulma CSS
 - **Preprocessador CSS:** Sass (SCSS)
 - **JavaScript:** Vanilla (ES6+) + jQuery (para manipulação do DOM e uso de plugins)
-- **API Fake:** JSON Server (para simular uma API REST de anúncios)
-- **API Pública:** Valorant-API (para catálogo de mídias de agentes, elos e armas)
+- **API Fake:** JSON Server (para simular uma API REST de usuários e preferências)
+- **API Pública:** Valorant-API (para catálogo de mídias de agentes e elos)
 
 ---
 
@@ -44,7 +44,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 
 - [ ] **ID 01** - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
-- [ ] **ID 02** - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do próprio framework.
+- [ ] **ID 02** - Implementa layout responsivo com Framework CSS (Bulma, Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do próprio framework.
 - [ ] **ID 03** - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
 - [ ] **ID 04** - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
 - [ ] **ID 05** - Cria layout fluido usando unidades relativas (vw, vh, %, em, rem) no lugar de unidades fixas (px).
@@ -86,5 +86,5 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 1. Clonar o repositório:
    ```bash
-   git clone [https://github.com/SEU-USUARIO/my-match-mates.git](https://github.com/SEU-USUARIO/my-match-mates.git)
+   git clone [https://github.com/luiz-ansiliero/my-match-mates.git](https://github.com/luiz-ansiliero/my-match-mates.git)
    ```
