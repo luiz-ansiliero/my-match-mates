@@ -8,7 +8,7 @@ Este documento detalha a arquitetura técnica, a stack tecnológica, o modelo de
 - **Preprocessador CSS:** Sass/SCSS v1.85.0+ (sobrescrita de variáveis nativas com a paleta dark/neon do Valorant).
 - **JavaScript:** ES6+ Vanilla JS + jQuery v3.7.1 (manipulação do DOM, formulário em etapas e consumo de dados).
 - **API Fake Local:** JSON Server (Persistência dos dados da coleção `users`).
-- **API Pública Externa:** Valorant-API Build 11 | Versão v13.05.00.5350494 (`https://valorant-api.com/v1/agents` e `https://valorant-api.com/v1/competitivetiers`) para consulta dinâmica de mídias de agentes e patentes.
+- **API Pública Externa:** Valorant-API Build 11 | Versão v13.05.00.5350494 (`https://valorant-api.com/`) para consulta dinâmica de mídias.
 
 ---
 

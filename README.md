@@ -35,7 +35,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 - **Preprocessador CSS:** Sass / SCSS (v1.85.0+)
 - **JavaScript:** Vanilla JS (ES6+) + jQuery (v3.7.1)
 - **API Fake (Local):** JSON Server (v1.0.0-beta.3 / v0.17.4)
-- **API Pública (Externa):** Valorant-API (Build 11 | versão v13.05.00.5350494 — `https://valorant-api.com/v1`)
+- **API Pública (Externa):** Valorant-API (Build 11 | versão v13.05.00.5350494 — `https://valorant-api.com/`)
 
 ---
 
