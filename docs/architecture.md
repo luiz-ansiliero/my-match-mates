@@ -4,11 +4,11 @@ Este documento detalha a arquitetura técnica, a stack tecnológica, o modelo de
 
 ## 1. Stack Tecnológica e Versões
 
-- **Framework CSS:** Bootstrap v5.3.8 (Grid responsivo, utilitários de layout e componentes JS nativos como Modais para atendimento ao ID 04).
-- **Preprocessador CSS:** Sass/SCSS v1.85.0+ (sobrescrita de variáveis nativas com a paleta dark/neon do Valorant).
-- **JavaScript:** ES6+ Vanilla JS + jQuery v3.7.1 (manipulação do DOM, formulário em etapas e consumo de dados).
-- **API Fake Local:** JSON Server (Persistência dos dados da coleção `users`).
-- **API Pública Externa:** Valorant-API Build 11 | Versão v13.05.00.5350494 (`https://valorant-api.com/`) para consulta dinâmica de mídias.
+- **Framework CSS:** Bootstrap v5.3.8.
+- **Preprocessador CSS:** Sass/SCSS v1.85.0+.
+- **JavaScript:** ES6+ Vanilla JS + jQuery v3.7.1.
+- **API Fake Local:** JSON Server.
+- **API Pública Externa:** Valorant-API Build 11 | Versão v13.05.00.5350494 (`https://valorant-api.com/`).
 
 ---
 

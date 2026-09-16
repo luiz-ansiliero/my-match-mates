@@ -31,11 +31,11 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** Bootstrap (v5.3.8) — Grid responsivo, utilitários flexbox e componentes JS nativos (Modais).
-- **Preprocessador CSS:** Sass / SCSS (v1.85.0+)
-- **JavaScript:** Vanilla JS (ES6+) + jQuery (v3.7.1)
-- **API Fake (Local):** JSON Server (v1.0.0-beta.3 / v0.17.4)
-- **API Pública (Externa):** Valorant-API (Build 11 | versão v13.05.00.5350494 — `https://valorant-api.com/`)
+- **Framework CSS:** Bootstrap (Grid responsivo, utilitários de layout e componentes JS nativos, além de ser o framework mais usado do mundo).
+- **Preprocessador CSS:** Sass/SCSS (Escolhido para modularizar o CSS e sobrescrever as variáveis nativas do Bootstrap, permitindo aplicar fielmente o design desenhado no Figma).
+- **JavaScript:** ES6+ Vanilla JS + jQuery (Utilizados em conjunto para a manipulação dinâmica do DOM, controle de fluxo do formulário multi-etapas, gerenciamento de modais e requisições assíncronas).
+- **API Fake Local:** JSON Server (Empregado como API Fake local para simular a persistência de dados dos cadastros de usuários e suas preferências táticas na coleção `users`).
+- **API Pública Externa:** Valorant-API (API pública externa consumida para carregar dinamicamente as mídias oficiais atualizadas do jogo, como ícones de agentes e emblemas de patentes "Elos").
 
 ---
 
