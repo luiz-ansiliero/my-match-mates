@@ -8,7 +8,7 @@
 
 Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web voltada para a conexão de jogadores e formação de times no cenário de eSports (iniciando com suporte ao jogo Valorant). O sistema permite a autenticação de usuários, cadastro de perfil tático via formulário multi-etapas com seleção de preferências (Elo, Sub-divisão, Funções, Pool de Agentes, Disponibilidade e Comunicação), exibição de feed interativo e matchmaking instantâneo.
 
-O frontend da aplicação foi desenvolvido utilizando HTML5, Bulma CSS com Sass/SCSS e JavaScript (com jQuery), consumindo a API pública **Valorant-API** para mídias oficiais do jogo e o **JSON Server** para a simulação de persistência das contas e preferências dos usuários.
+O frontend da aplicação foi desenvolvido utilizando HTML5, Bootstrap CSS com Sass/SCSS e JavaScript (com jQuery), consumindo a API pública **Valorant-API** para mídias oficiais do jogo e o **JSON Server** para a simulação de persistência das contas e preferências dos usuários.
 
 ---
 
