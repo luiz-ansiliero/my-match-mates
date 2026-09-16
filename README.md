@@ -31,11 +31,11 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** Bulma CSS
-- **Preprocessador CSS:** Sass (SCSS)
-- **JavaScript:** Vanilla (ES6+) + jQuery (para manipulação do DOM e uso de plugins)
-- **API Fake:** JSON Server (para simular uma API REST de usuários e preferências)
-- **API Pública:** Valorant-API (para catálogo de mídias de agentes e elos)
+- **Framework CSS:** Bootstrap (v5.3.8) — Grid responsivo, utilitários flexbox e componentes JS nativos (Modais).
+- **Preprocessador CSS:** Sass / SCSS (v1.85.0+)
+- **JavaScript:** Vanilla JS (ES6+) + jQuery (v3.7.1)
+- **API Fake (Local):** JSON Server (v1.0.0-beta.3 / v0.17.4)
+- **API Pública (Externa):** Valorant-API (Build 11 | versão v13.05.00.5350494 — `https://valorant-api.com/v1`)
 
 ---
 

@@ -2,12 +2,13 @@
 
 Este documento detalha a arquitetura técnica, a stack tecnológica, o modelo de dados e os contratos de API do sistema **My MatchMates**.
 
-## 1. Stack Tecnológica
+## 1. Stack Tecnológica e Versões
 
-- **Framework CSS:** Bulma CSS (utilizado para grid responsivo flexbox, formulários e estrutura base de componentes).
-- **Estilização Customizada:** Sass/CSS customizado para aplicar o Design System dark/neon do Valorant sobre o Bulma.
-- **JavaScript:** Vanilla JS + jQuery para manipulação do DOM, controle do formulário multi-etapas e lógica dos modais.
-- **APIs:** JSON Server (API local para armazenamento) e Valorant-API (API pública para mídias oficiais).
+- **Framework CSS:** Bootstrap v5.3.8 (Grid responsivo, utilitários de layout e componentes JS nativos como Modais para atendimento ao ID 04).
+- **Preprocessador CSS:** Sass/SCSS v1.85.0+ (sobrescrita de variáveis nativas com a paleta dark/neon do Valorant).
+- **JavaScript:** ES6+ Vanilla JS + jQuery v3.7.1 (manipulação do DOM, formulário em etapas e consumo de dados).
+- **API Fake Local:** JSON Server (Persistência dos dados da coleção `users`).
+- **API Pública Externa:** Valorant-API Build 11 | Versão v13.05.00.5350494 (`https://valorant-api.com/v1/agents` e `https://valorant-api.com/v1/competitivetiers`) para consulta dinâmica de mídias de agentes e patentes.
 
 ---
 
