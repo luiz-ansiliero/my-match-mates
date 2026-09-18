@@ -80,6 +80,16 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 - [ ] **ID 23** - Realiza requisições assíncronas para uma API fake para exibir dados na página.
 - [ ] **ID 24** - Realiza requisições assíncronas para APIs públicas reais (Valorant-API), exibindo os dados e tratando erros.
 
+## Checklist da Atividade 06
+
+- [x] Configurei minha identidade no Git
+- [x] Clonei o repositório do meu projeto
+- [x] Inicializei o NPM (package.json)
+- [x] Criei o .gitignore ignorando node_modules e .env
+- [x] Instalei jquery e uuid como dependências de produção
+- [x] Instalei gh-pages como dependência de desenvolvimento
+- [x] Fiz commit e push para a branch main
+
 ## 🚀 Manual de Execução
 
 1. Clonar o repositório:
