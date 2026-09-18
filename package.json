@@ -1,0 +1,31 @@
+{
+  "name": "my-match-mates",
+  "version": "1.0.0",
+  "description": "**Autor:** Luiz Eduardo Ferreira Ansiliero   **Curso:** Tecnologia em Sistemas para Internet — UTFPR   **Disciplina:** Desenvolvimento de Páginas Web com Framework e CSS",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiz-ansiliero/my-match-mates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/luiz-ansiliero/my-match-mates/issues"
+  },
+  "homepage": "https://github.com/luiz-ansiliero/my-match-mates#readme",
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
