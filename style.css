@@ -1,0 +1,10 @@
+:root {
+  --bs-primary: #ff4654;
+  --bs-secondary: #ba3b46;
+  --bs-info: #ffffff;
+  --bs-warning: #17212f;
+  --bs-dark: #0d141e;
+}
+.back {
+  position: absolute;
+}
