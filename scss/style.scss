@@ -1,0 +1,918 @@
+// ==========================================================================
+// Custom SASS / SCSS - My Match Mates
+// Projeto: Desenvolvimento de Páginas Web com Framework e CSS
+// Suporte a colored-regions com cores suaves/transparentes (alpha 0.15)
+// ==========================================================================
+
+// #region [rgba(74, 144, 226, 0.15)] Base, Reset e Configurações Globais
+// --------------------------------------------------------------------------
+// 1. Funções Essenciais do Bootstrap
+// --------------------------------------------------------------------------
+@import "../node_modules/bootstrap/scss/functions";
+
+// --------------------------------------------------------------------------
+// 2. Tokens de Design (Figma node-id 46:4995 e 49:5024)
+// --------------------------------------------------------------------------
+$color-primaria:        #ff4654;
+$color-secundaria:      #ba3b46;
+$color-destaque:        #ffffff;
+$color-destaque-fundo:  #17212f;
+$color-fundo:           #0d141e;
+$color-destaque-fundo-2:#585858;
+$color-destaque-fundo-alpha: rgba(88, 88, 88, 0.2);
+
+// Elementos Específicos do Layout
+$color-input-bg:        #19202b;
+$color-input-inner:     #0d141e;
+$color-input-user:      #57595b;
+$color-input-pwd:       #6c6c6c;
+$color-btn-entrar:      #ff525c;
+$color-btn-entrar-glow: rgba(255, 82, 92, 0.73);
+$color-logo-glow:       rgba(255, 135, 142, 0.73);
+$color-card-border:     rgba(255, 255, 255, 0.07);
+$color-box-bg:          #182232;
+$color-badge-bg:        #8f192a;
+$color-badge-text:      #ff9da0;
+$color-footer-bg:       #070e19;
+$color-footer-title:    #dce2f2;
+$color-footer-muted:    #e4bdbc;
+$color-gold-glow:       rgba(255, 215, 0, 0.75);
+
+// Tipografia
+$font-family-base:      'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+// --------------------------------------------------------------------------
+// 3. Sobrescrita de Variáveis Padrão do Bootstrap 5 (Customização via SASS)
+// --------------------------------------------------------------------------
+$primary:               $color-primaria;
+$secondary:             $color-destaque-fundo-2;
+$info:                  $color-destaque;
+$warning:               $color-destaque-fundo;
+$dark:                  $color-fundo;
+
+$body-bg:               $color-fundo;
+$body-color:            $color-destaque;
+$font-family-sans-serif:$font-family-base;
+
+// Formulários e Inputs
+$input-bg:              $color-input-bg;
+$input-border-color:    transparent;
+$input-color:           $color-destaque;
+$input-placeholder-color: $color-input-pwd;
+$input-border-radius:   8px;
+$input-focus-border-color: $color-primaria;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba(255, 70, 84, 0.25);
+
+// --------------------------------------------------------------------------
+// 4. Importação Completa do Bootstrap via SASS (@import)
+// --------------------------------------------------------------------------
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// --------------------------------------------------------------------------
+// 5. Variáveis CSS Globais e Regras Preservadas
+// --------------------------------------------------------------------------
+:root {
+  --bs-primary: #{$color-primaria};
+  --bs-secondary: #{$color-secundaria};
+  --bs-info: #{$color-destaque};
+  --bs-warning: #{$color-destaque-fundo};
+  --bs-dark: #{$color-fundo};
+
+  --color-destaque-fundo-2: #{$color-destaque-fundo-2};
+  --color-input-bg: #{$color-input-bg};
+  --color-footer-bg: #{$color-footer-bg};
+  --color-gold: #ffd700;
+}
+
+// Classe legada do CSS original (index.html)
+.back {
+  position: absolute;
+}
+
+// Reset Global
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  background-color: $color-fundo;
+  color: $color-destaque;
+  overflow-x: hidden;
+}
+
+// Wrapper principal com imagem de fundo da pasta img/
+.login-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('img/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 20, 30, 0.35);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+.login-content {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+// #endregion
+
+// #region [rgba(230, 126, 34, 0.15)] Identidade Visual e Logo Badge
+// Emblema da Logo (node-id 46:3279 / 43:1842) - Ampliada para 175px para preencher o espaço
+.logo-badge {
+  position: relative;
+  width: 198px;
+  height: 187px;
+  background: #141b25;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px 0px $color-logo-glow;
+  border: 1px solid rgba(255, 135, 142, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    width: 175px;
+    height: 175px;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 26px 2px $color-logo-glow;
+  }
+
+  @media (max-width: 767.98px) {
+    width: 160px;
+    height: 160px;
+
+    img {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}
+// #endregion
+
+// #region [rgba(46, 204, 113, 0.15)] Tela de Login
+// Quadro / Card de Login (Desktop node-id 46:3277 & Mobile node-id 43:1840)
+.login-card {
+  width: 100%;
+  max-width: 681px;
+  background-color: $color-fundo;
+  border-radius: 20px;
+  padding: 41px 24px 36px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 767.98px) {
+    max-width: 382px;
+    padding: 32px 16px 28px;
+    border-radius: 20px;
+    gap: 22px;
+  }
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 327px;
+}
+
+// Botões Específicos do Design
+.btn-entrar {
+  width: 172px;
+  height: 48px;
+  background-color: $color-btn-entrar;
+  color: $color-destaque;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 14px 0px $color-btn-entrar-glow;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+
+  &:hover, &:focus {
+    background-color: lighten($color-btn-entrar, 5%);
+    color: $color-destaque;
+    box-shadow: 0px 0px 20px 2px rgba(255, 82, 92, 0.9);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0px 0px 10px 0px $color-btn-entrar-glow;
+  }
+}
+
+.btn-cadastrar {
+  width: 155px;
+  height: 39px;
+  background-color: $color-destaque-fundo-2;
+  color: $color-destaque;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+
+  &:hover, &:focus {
+    background-color: lighten($color-destaque-fundo-2, 8%);
+    color: $color-destaque;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.divider-or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  width: 100%;
+
+  .divider-line {
+    width: 42px;
+    height: 1px;
+    background-color: $color-destaque;
+    opacity: 0.85;
+  }
+
+  .divider-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-footer-title;
+    letter-spacing: -0.7px;
+    line-height: 1;
+    user-select: none;
+  }
+}
+// #endregion
+
+// #region [rgba(155, 89, 182, 0.15)] Fluxo de Cadastro - Estrutura e Badges de Progresso
+// Card Geral de Cadastro Multi-Etapas (Desktop node-id 46:4122 & Mobile node-id 43:1861)
+.cadastro-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: $color-fundo;
+  border-radius: 20px;
+  padding: 30px 32px 34px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 767.98px) {
+    max-width: 382px;
+    padding: 24px 16px 26px;
+    gap: 14px;
+  }
+}
+
+// Badge de Identificação do Passo
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: $color-badge-bg;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  color: $color-badge-text;
+  align-self: flex-start;
+
+  .step-dot {
+    width: 6px;
+    height: 6px;
+    background-color: $color-btn-entrar;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+
+// Cabeçalho de cada Passo
+.step-header-box {
+  background-color: $color-input-bg;
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .step-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: $color-footer-title;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+
+  .step-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: $color-footer-muted;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Seção Interna Estilizada
+.step-section-box {
+  background-color: $color-box-bg;
+  border: 1px solid $color-card-border;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .section-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: $color-destaque;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+
+    .section-pill-limit {
+      font-size: 11px;
+      font-weight: 700;
+      background-color: rgba(255, 82, 92, 0.2);
+      color: $color-btn-entrar;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-left: auto;
+    }
+  }
+
+  .section-desc {
+    font-size: 12px;
+    color: #aeaeae;
+    margin: 0;
+  }
+}
+
+// Botão de Avanço do Passo
+.btn-step-next {
+  width: 172px;
+  height: 48px;
+  background-color: $color-btn-entrar;
+  color: $color-destaque;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 0;
+  cursor: pointer;
+  box-shadow: 0px 0px 14px 0px $color-btn-entrar-glow;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover, &:focus {
+    background-color: lighten($color-btn-entrar, 5%);
+    color: $color-destaque;
+    box-shadow: 0px 0px 22px 2px rgba(255, 82, 92, 0.9);
+    transform: translateY(-1px);
+  }
+}
+
+// Botão Voltar Secundário
+.btn-step-prev {
+  background: none;
+  border: none;
+  color: $color-footer-muted;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 6px auto 0;
+  display: block;
+  text-align: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-destaque;
+  }
+}
+// #endregion
+
+// #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1 - Usuário e Senha
+.checklist-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 2px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #aeaeae;
+
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #aeaeae;
+    color: $color-fundo;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+  }
+}
+// #endregion
+
+// #region [rgba(26, 188, 156, 0.15)] Cadastro Passo 2 - Riot ID
+.input-box-dark {
+  width: 100%;
+  height: 48px;
+  background-color: $color-input-inner;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: $color-destaque;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: $color-input-user;
+  }
+
+  &:focus {
+    border-color: $color-primaria;
+    box-shadow: 0 0 0 2px rgba(255, 70, 84, 0.3);
+  }
+}
+// #endregion
+
+// #region [rgba(241, 196, 15, 0.15)] Cadastro Passo 3 - Informações de Jogo e Matchmaking
+.rank-card-item {
+  background-color: rgba(13, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+
+  .rank-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #dce2f2;
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: rgba(25, 32, 43, 0.9);
+    border-color: rgba(255, 82, 92, 0.4);
+  }
+
+  &.selected {
+    background-color: rgba(30, 42, 60, 0.95);
+    border-color: $color-btn-entrar;
+    box-shadow: 0 0 12px rgba(255, 82, 92, 0.5);
+
+    .rank-name {
+      color: $color-btn-entrar;
+    }
+  }
+}
+
+.tier-division-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+
+  .division-label {
+    font-size: 12px;
+    color: #aeaeae;
+    margin-right: 4px;
+  }
+
+  .btn-division {
+    width: 32px;
+    height: 28px;
+    background-color: rgba(13, 20, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #dce2f2;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: $color-btn-entrar;
+    }
+
+    &.active {
+      background-color: $color-btn-entrar;
+      border-color: $color-btn-entrar;
+      color: #ffffff;
+      box-shadow: 0 0 8px $color-btn-entrar-glow;
+    }
+  }
+}
+
+.role-card-item {
+  background-color: rgba(13, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  .role-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    i {
+      font-size: 16px;
+      color: #ff9da0;
+    }
+
+    .role-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+  }
+
+  .role-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #57595b;
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    border-color: rgba(255, 82, 92, 0.5);
+  }
+
+  &.selected {
+    border-color: $color-btn-entrar;
+    background-color: rgba(30, 42, 60, 0.95);
+
+    .role-indicator {
+      background-color: $color-btn-entrar;
+      border-color: $color-btn-entrar;
+      box-shadow: 0 0 6px $color-btn-entrar-glow;
+    }
+  }
+}
+// #endregion
+
+// #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4 - Agentes em Jogo / Aptos
+.agents-grid-scroll {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 82, 92, 0.4);
+    border-radius: 4px;
+  }
+}
+
+.agent-card-item {
+  position: relative;
+  background-color: rgba(13, 20, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 6px 4px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  .agent-avatar {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: #19202b;
+  }
+
+  .agent-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .agent-role {
+    font-size: 9px;
+    font-weight: 500;
+    color: #aeaeae;
+    margin: 0;
+    text-align: center;
+  }
+
+  .agent-check-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #57595b;
+    color: #ffffff;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    border-color: rgba(255, 82, 92, 0.5);
+    transform: translateY(-1px);
+  }
+
+  &.selected {
+    border-color: $color-btn-entrar;
+    box-shadow: 0 0 10px rgba(255, 82, 92, 0.4);
+
+    .agent-check-badge {
+      background-color: $color-btn-entrar;
+    }
+  }
+
+  &.favorite {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 14px $color-gold-glow !important;
+
+    .agent-check-badge {
+      background-color: #ffd700;
+      color: #000000;
+    }
+  }
+}
+// #endregion
+
+// #region [rgba(233, 30, 99, 0.15)] Cadastro Passo 5 - Personalização (Preferidos e Favorito)
+.btn-save-section {
+  background-color: $color-btn-entrar;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: lighten($color-btn-entrar, 6%);
+    box-shadow: 0 0 8px $color-btn-entrar-glow;
+  }
+}
+// #endregion
+
+// #region [rgba(0, 188, 212, 0.15)] Cadastro Passo 6 - Disponibilidade e Comunicação
+.btn-day-pill {
+  flex: 1;
+  height: 38px;
+  background-color: rgba(13, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #dce2f2;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    border-color: $color-btn-entrar;
+  }
+
+  &.active {
+    background-color: $color-btn-entrar;
+    border-color: $color-btn-entrar;
+    color: #ffffff;
+    box-shadow: 0 0 8px $color-btn-entrar-glow;
+  }
+}
+
+.slot-card-item {
+  background-color: rgba(13, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  .slot-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .slot-time {
+    font-size: 11px;
+    color: #aeaeae;
+    margin: 0;
+  }
+
+  &:hover {
+    border-color: rgba(255, 82, 92, 0.5);
+  }
+
+  &.active {
+    border-color: $color-btn-entrar;
+    background-color: rgba(30, 42, 60, 0.95);
+    box-shadow: 0 0 8px rgba(255, 82, 92, 0.4);
+
+    .slot-name {
+      color: $color-btn-entrar;
+    }
+  }
+}
+
+.comm-card-item {
+  background-color: rgba(13, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  i {
+    font-size: 18px;
+    color: #ffffff;
+  }
+
+  .comm-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #dce2f2;
+    margin: 0;
+    text-align: center;
+  }
+
+  &:hover {
+    border-color: rgba(255, 82, 92, 0.5);
+  }
+
+  &.active {
+    border-color: $color-btn-entrar;
+    background-color: rgba(30, 42, 60, 0.95);
+    box-shadow: 0 0 8px rgba(255, 82, 92, 0.4);
+
+    i, .comm-name {
+      color: $color-btn-entrar;
+    }
+  }
+}
+// #endregion
+
+// #region [rgba(149, 165, 166, 0.15)] Rodapé Institucional
+.login-footer {
+  position: relative;
+  z-index: 2;
+  background-color: $color-footer-bg;
+  padding: 1.75rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  .footer-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-footer-title;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .footer-sub {
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-footer-muted;
+    letter-spacing: 0.24px;
+    margin: 0;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-footer-muted;
+    letter-spacing: 0.24px;
+    margin: 0;
+  }
+
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}
+// #endregion
