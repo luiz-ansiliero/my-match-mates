@@ -1,0 +1,84 @@
+==========================================================================
+ÍNDICE DE CORES - EXTENSÃO COLORED-REGIONS
+Projeto: My Match Mates (DPWFC - UTFPR)
+==========================================================================
+
+Este arquivo mapeia todas as cores transparentes utilizadas com a extensão
+'colored-regions' no VS Code, correlacionando de forma idêntica os blocos
+nos arquivos HTML (index.html, login.html, cadastro.html) e SASS (scss/style.scss).
+
+Todas as cores foram configuradas com transparência de 15% (rgba com alpha 0.15)
+para proporcionar destaque visual sutil sem comprometer a legibilidade do código.
+
+--------------------------------------------------------------------------
+TABELA DE CORRELAÇÃO DE CORES:
+--------------------------------------------------------------------------
+
+1. [rgba(74, 144, 226, 0.15)] - AZUL
+   • Região: Base, Reset e Configurações Globais
+   • Descrição: Estrutura base de layout, background cover, reset CSS, 
+     importação das funções do Bootstrap e tokens fundamentais.
+   • Ocorrências: index.html, login.html, cadastro.html, scss/style.scss
+
+2. [rgba(230, 126, 34, 0.15)] - LARANJA
+   • Região: Identidade Visual e Logo Badge
+   • Descrição: Emblema da marca, container da logo inicial (175px), 
+     efeitos de glow avermelhado e regras de redimensionamento da logo.
+   • Ocorrências: login.html, scss/style.scss
+
+3. [rgba(46, 204, 113, 0.15)] - VERDE
+   • Região: Tela de Login
+   • Descrição: Card de login (Desktop e Mobile), inputs de usuário e senha,
+     container centralizado com gap de 5px para os botões "Entrar" e "Cadastrar",
+     além do divisor "ou".
+   • Ocorrências: login.html, scss/style.scss
+
+4. [rgba(155, 89, 182, 0.15)] - ROXO
+   • Região: Fluxo de Cadastro - Estrutura e Badges de Progresso
+   • Descrição: Card geral multi-etapas do cadastro, badge de identificação
+     dos passos ("PASSO X DE 6") e estrutura de abas nativas do Bootstrap.
+   • Ocorrências: cadastro.html, scss/style.scss
+
+5. [rgba(231, 76, 60, 0.15)] - VERMELHO
+   • Região: Cadastro Passo 1 - Usuário e Senha
+   • Descrição: Primeira etapa do formulário de cadastro; campos de nome
+     de usuário e senha, acompanhados da lista de checklist de requisitos.
+   • Ocorrências: cadastro.html, scss/style.scss
+
+6. [rgba(26, 188, 156, 0.15)] - TURQUESA
+   • Região: Cadastro Passo 2 - Riot ID
+   • Descrição: Segunda etapa do formulário; campo para inserção do Riot ID
+     (formato ID#TAG) com indicador visual de validação.
+   • Ocorrências: cadastro.html, scss/style.scss
+
+7. [rgba(241, 196, 15, 0.15)] - AMARELO
+   • Região: Cadastro Passo 3 - Informações de Jogo e Matchmaking
+   • Descrição: Terceira etapa; grade de seleção de elo (Ferro ao Radiante),
+     sub-divisão competitiva (I, II, III) e seleção de funções preferidas.
+   • Ocorrências: cadastro.html, scss/style.scss
+
+8. [rgba(52, 73, 94, 0.15)] - AZUL ESCURO
+   • Região: Cadastro Passo 4 - Agentes em Jogo / Aptos
+   • Descrição: Quarta etapa; grade de agentes estáticos do Valorant para
+     seleção de agentes aptos (até 8 agentes).
+   • Ocorrências: cadastro.html, scss/style.scss
+
+9. [rgba(233, 30, 99, 0.15)] - ROSA
+   • Região: Cadastro Passo 5 - Personalização (Preferidos e Favorito)
+   • Descrição: Quinta etapa; blocos para escolha de até 2 agentes preferidos
+     e 1 agente favorito com moldura e brilho dourado (foto de perfil).
+   • Ocorrências: cadastro.html, scss/style.scss
+
+10. [rgba(0, 188, 212, 0.15)] - CIANO
+    • Região: Cadastro Passo 6 - Disponibilidade e Comunicação
+    • Descrição: Sexta etapa; botões seletores de dias da semana, faixas
+      horárias habituais, meios de comunicação e botão "Finalizar".
+    • Ocorrências: cadastro.html, scss/style.scss
+
+11. [rgba(149, 165, 166, 0.15)] - CINZA
+    • Região: Rodapé Institucional
+    • Descrição: Rodapé desktop com título "MY MATCH MATES", subtítulo e
+      copyright oficial (oculto no mobile conforme design do Figma).
+    • Ocorrências: login.html, cadastro.html, scss/style.scss
+
+==========================================================================
