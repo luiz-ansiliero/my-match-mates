@@ -23,23 +23,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- #region [rgba(74, 144, 226, 0.15)] Base, Reset e Configurações Globais -->
+    <!-- #region [rgba(74, 144, 226, 0.15)] Configurações Globais -->
     <div class="login-page-wrapper min-vh-100 d-flex flex-column justify-content-between">
       <main
         class="login-content flex-grow-1 d-flex align-items-center justify-content-center p-3 p-md-4"
       >
         <!-- #endregion -->
 
-        <!-- #region [rgba(155, 89, 182, 0.15)] Fluxo de Cadastro - Estrutura e Badges de Progresso -->
+        <!-- #region [rgba(155, 89, 182, 0.15)]-->
         <section
           class="cadastro-card card border-0 rounded-4 shadow-lg p-3 p-md-4 d-flex flex-column align-items-stretch"
-          data-node-id="46:4122"
         >
-          <!-- Navegação oculta do Bootstrap para permitir transição nativa de abas sem JS customizado -->
-          <ul class="nav nav-pills d-none" id="cadastroPills" role="tablist">
+          <!-- nav pra mostra pro Roni -->
+          <ul class="nav nav-pills d-flex gap-2" id="cadastroPills" role="tablist">
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link active"
+                class="nav-link active bg-warning"
                 id="tab-1"
                 data-bs-toggle="pill"
                 data-bs-target="#step-1"
@@ -49,7 +48,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="nav-link bg-warning"
                 id="tab-2"
                 data-bs-toggle="pill"
                 data-bs-target="#step-2"
@@ -59,7 +58,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="nav-link bg-warning"
                 id="tab-3"
                 data-bs-toggle="pill"
                 data-bs-target="#step-3"
@@ -69,7 +68,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="nav-link bg-warning"
                 id="tab-4"
                 data-bs-toggle="pill"
                 data-bs-target="#step-4"
@@ -79,7 +78,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="nav-link bg-warning"
                 id="tab-5"
                 data-bs-toggle="pill"
                 data-bs-target="#step-5"
@@ -89,7 +88,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="nav-link bg-warning"
                 id="tab-6"
                 data-bs-toggle="pill"
                 data-bs-target="#step-6"
@@ -98,11 +97,9 @@
               ></button>
             </li>
           </ul>
-
-          <!-- Conteúdo em Abas (Nativo do Bootstrap) -->
+          <!-- #endregion -->
+          <!-- #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1 - Usuário e Senha -->
           <div class="tab-content w-100" id="cadastroTabContent">
-            <!-- #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1 - Usuário e Senha -->
-            <!-- PASSO 1: Desktop node-id 46:4120 | Mobile node-id 43:1861 -->
             <div
               class="tab-pane fade show active"
               id="step-1"
@@ -112,26 +109,22 @@
               <div class="d-flex flex-column gap-3">
                 <div
                   class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                  data-node-id="46:4124"
                 >
                   <span class="step-dot rounded-circle"></span>
                   <span>PASSO 1 DE 6 • Cadastro de usuário</span>
                 </div>
 
-                <div class="step-header-box p-3 rounded-3" data-node-id="46:4128">
-                  <h1 class="step-title fs-3 fw-bold mb-1" data-node-id="46:4129">
-                    Nome de Usuário
-                  </h1>
-                  <p class="step-subtitle small text-muted mb-0" data-node-id="46:4131">
+                <div class="step-header-box p-3 rounded-3">
+                  <h1 class="step-title fs-3 fw-bold mb-1">Nome de Usuário</h1>
+                  <p class="step-subtitle small text-muted mb-0">
                     Preencha com seu nome de usuário e sua senha, nenhumas destas informações será
                     revelada a outros usuários.
                   </p>
                 </div>
 
-                <!-- Bloco Usuário -->
+                <!-- Usuário -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
-                  data-node-id="46:4132"
                 >
                   <label for="cad-username" class="visually-hidden">Usuário</label>
                   <input
@@ -155,10 +148,9 @@
                   </div>
                 </div>
 
-                <!-- Bloco Senha -->
+                <!-- Senha -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                  data-node-id="46:4140"
                 >
                   <label for="cad-password" class="visually-hidden">Senha</label>
                   <input
@@ -228,9 +220,7 @@
               </div>
             </div>
             <!-- #endregion -->
-
             <!-- #region [rgba(26, 188, 156, 0.15)] Cadastro Passo 2 - Riot ID -->
-            <!-- PASSO 2: Desktop node-id 46:4181 | Mobile node-id 43:1912 -->
             <div class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="tab-2">
               <div class="d-flex flex-column gap-3">
                 <div
@@ -293,9 +283,7 @@
               </div>
             </div>
             <!-- #endregion -->
-
             <!-- #region [rgba(241, 196, 15, 0.15)] Cadastro Passo 3 - Informações de Jogo e Matchmaking -->
-            <!-- PASSO 3: Desktop node-id 46:4214 | Mobile node-id 43:2043 -->
             <div class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="tab-3">
               <div class="d-flex flex-column gap-3">
                 <div
@@ -314,7 +302,7 @@
                   </p>
                 </div>
 
-                <!-- Seção Matchmaking (Elos) -->
+                <!-- Elos -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
                 >
@@ -385,7 +373,7 @@
                     </div>
                   </div>
 
-                  <!-- Subdivisão -->
+                  <!-- Subdiv -->
                   <div
                     class="tier-division-bar d-flex align-items-center justify-content-center gap-2 mt-3"
                   >
@@ -396,7 +384,7 @@
                   </div>
                 </div>
 
-                <!-- Seção Funções Preferidas -->
+                <!-- Funções -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
                 >
@@ -459,7 +447,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="d-flex flex-column align-items-center mt-2">
                   <button
                     type="button"
@@ -481,9 +468,7 @@
               </div>
             </div>
             <!-- #endregion -->
-
-            <!-- #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4 - Agentes em Jogo / Aptos -->
-            <!-- PASSO 4: Mobile node-id 43:2189 / Desktop Step 4 -->
+            <!-- #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4 - Agentes Aptos -->
             <div class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="tab-4">
               <div class="d-flex flex-column gap-3">
                 <div
@@ -492,7 +477,6 @@
                   <span class="step-dot rounded-circle"></span>
                   <span>PASSO 4 DE 6 • Cadastro de usuário</span>
                 </div>
-
                 <div class="step-header-box p-3 rounded-3">
                   <h1 class="step-title fs-3 fw-bold mb-1">Agentes Em jogo</h1>
                   <p class="step-subtitle small text-muted mb-0">
@@ -500,7 +484,6 @@
                     competitivas.
                   </p>
                 </div>
-
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
                 >
@@ -515,8 +498,7 @@
                       >Até Oito</span
                     >
                   </div>
-
-                  <!-- Grade de Agentes Estática -->
+                  <!-- Agentes -->
                   <div class="row row-cols-4 g-2 agents-grid-scroll">
                     <div class="col">
                       <div class="agent-card-item selected rounded-3 p-1 text-center">
@@ -636,7 +618,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="d-flex flex-column align-items-center mt-2">
                   <button
                     type="button"
@@ -658,9 +639,7 @@
               </div>
             </div>
             <!-- #endregion -->
-
             <!-- #region [rgba(233, 30, 99, 0.15)] Cadastro Passo 5 - Personalização (Preferidos e Favorito) -->
-            <!-- PASSO 5: Desktop node-id 46:4758 | Mobile node-id 43:2447 -->
             <div class="tab-pane fade" id="step-5" role="tabpanel" aria-labelledby="tab-5">
               <div class="d-flex flex-column gap-3">
                 <div
@@ -669,7 +648,6 @@
                   <span class="step-dot rounded-circle"></span>
                   <span>PASSO 5 DE 6 • Cadastro de usuário</span>
                 </div>
-
                 <div class="step-header-box p-3 rounded-3">
                   <h1 class="step-title fs-3 fw-bold mb-1">Personalização</h1>
                   <p class="step-subtitle small text-muted mb-0">
@@ -677,7 +655,6 @@
                     busca.
                   </p>
                 </div>
-
                 <!-- Agentes Preferidos -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
@@ -735,7 +712,6 @@
                     </div>
                   </div>
                 </div>
-
                 <!-- Agente Favorito -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
@@ -793,7 +769,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="d-flex flex-column align-items-center mt-2">
                   <button
                     type="button"
@@ -815,9 +790,7 @@
               </div>
             </div>
             <!-- #endregion -->
-
             <!-- #region [rgba(0, 188, 212, 0.15)] Cadastro Passo 6 - Disponibilidade e Comunicação -->
-            <!-- PASSO 6: Desktop node-id 46:4371 | Mobile node-id 43:1935 -->
             <div class="tab-pane fade" id="step-6" role="tabpanel" aria-labelledby="tab-6">
               <div class="d-flex flex-column gap-3">
                 <div
@@ -826,7 +799,6 @@
                   <span class="step-dot rounded-circle"></span>
                   <span>PASSO 6 DE 6 • Cadastro de usuário</span>
                 </div>
-
                 <div class="step-header-box p-3 rounded-3">
                   <h1 class="step-title fs-3 fw-bold mb-1">Disponibilidade e comunicação</h1>
                   <p class="step-subtitle small text-muted mb-0">
@@ -834,8 +806,7 @@
                     além de definir quais métodos de comunição você costuma usar em jogo.
                   </p>
                 </div>
-
-                <!-- Dias ativos -->
+                <!-- Dias -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
                 >
@@ -879,7 +850,7 @@
                   </div>
                 </div>
 
-                <!-- Horários e disponibilidade -->
+                <!-- Horários -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
                 >
@@ -918,7 +889,7 @@
                   </div>
                 </div>
 
-                <!-- Comunicação e bate papo -->
+                <!-- Comunicação -->
                 <div
                   class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
                 >
@@ -949,7 +920,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="d-flex flex-column align-items-center mt-2">
                   <a
                     href="login.html"
@@ -972,17 +942,9 @@
             <!-- #endregion -->
           </div>
         </section>
-        <!-- #endregion -->
-
-        <!-- #region [rgba(74, 144, 226, 0.15)] Base, Reset e Configurações Globais -->
       </main>
-      <!-- #endregion -->
-
-      <!-- #region [rgba(149, 165, 166, 0.15)] Rodapé Institucional -->
-      <footer
-        class="login-footer py-4 px-4 px-md-5 border-top border-secondary border-opacity-10"
-        data-node-id="46:4172"
-      >
+      <!-- #region [rgba(149, 165, 166, 0.15)] Rodapé -->
+      <footer class="login-footer py-4 px-4 px-md-5 border-top border-secondary border-opacity-10">
         <div class="container-fluid px-0">
           <div class="row align-items-center gy-2">
             <div class="col-12 col-md-6 d-flex align-items-center gap-2">
