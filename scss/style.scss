@@ -4,15 +4,9 @@
 // Suporte a colored-regions com cores suaves/transparentes (alpha 0.15)
 // ==========================================================================
 
-// #region [rgba(74, 144, 226, 0.15)] Base, Reset e Configurações Globais
-// --------------------------------------------------------------------------
-// 1. Funções Essenciais do Bootstrap
-// --------------------------------------------------------------------------
+// #region [rgba(74, 144, 226, 0.15)] Configurações Globais
 @import '../node_modules/bootstrap/scss/functions';
 
-// --------------------------------------------------------------------------
-// 2. Tokens de Design (Figma node-id 46:4995 e 49:5024)
-// --------------------------------------------------------------------------
 $color-primaria: #ff4654;
 $color-secundaria: #ba3b46;
 $color-destaque: #ffffff;
@@ -21,7 +15,6 @@ $color-fundo: #0d141e;
 $color-destaque-fundo-2: #585858;
 $color-destaque-fundo-alpha: rgba(88, 88, 88, 0.2);
 
-// Elementos Específicos do Layout
 $color-input-bg: #19202b;
 $color-input-inner: #0d141e;
 $color-input-user: #57595b;
@@ -38,7 +31,6 @@ $color-footer-title: #dce2f2;
 $color-footer-muted: #e4bdbc;
 $color-gold-glow: rgba(255, 215, 0, 0.75);
 
-// Tipografia
 $font-family-base:
   'Space Grotesk',
   -apple-system,
@@ -47,9 +39,6 @@ $font-family-base:
   Roboto,
   sans-serif;
 
-// --------------------------------------------------------------------------
-// 3. Sobrescrita de Variáveis Padrão do Bootstrap 5 (Customização via SASS)
-// --------------------------------------------------------------------------
 $primary: $color-primaria;
 $secondary: $color-destaque-fundo-2;
 $info: $color-destaque;
@@ -60,7 +49,6 @@ $body-bg: $color-fundo;
 $body-color: $color-destaque;
 $font-family-sans-serif: $font-family-base;
 
-// Formulários e Inputs
 $input-bg: $color-input-bg;
 $input-border-color: transparent;
 $input-color: $color-destaque;
@@ -69,14 +57,8 @@ $input-border-radius: 8px;
 $input-focus-border-color: $color-primaria;
 $input-focus-box-shadow: 0 0 0 0.25rem rgba(255, 70, 84, 0.25);
 
-// --------------------------------------------------------------------------
-// 4. Importação Completa do Bootstrap via SASS (@import)
-// --------------------------------------------------------------------------
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-// --------------------------------------------------------------------------
-// 5. Variáveis CSS Globais e Regras Preservadas
-// --------------------------------------------------------------------------
 :root {
   --bs-primary: #{$color-primaria};
   --bs-secondary: #{$color-secundaria};
@@ -90,12 +72,10 @@ $input-focus-box-shadow: 0 0 0 0.25rem rgba(255, 70, 84, 0.25);
   --color-gold: #ffd700;
 }
 
-// Classe legada do CSS original (index.html)
 .back {
   position: absolute;
 }
 
-// Reset Global
 html,
 body {
   min-height: 100vh;
@@ -107,7 +87,6 @@ body {
   overflow-x: hidden;
 }
 
-// Wrapper principal com imagem de fundo da pasta img/
 .login-page-wrapper {
   position: relative;
   background-image: url('img/background.png');
@@ -131,9 +110,7 @@ body {
   z-index: 2;
 }
 // #endregion
-
-// #region [rgba(230, 126, 34, 0.15)] Identidade Visual e Logo Badge
-// Emblema da Logo (node-id 46:3279 / 43:1842) - Ampliada para 175px para preencher o espaço
+// #region [rgba(230, 126, 34, 0.15)] Identidade Visual
 .logo-badge {
   position: relative;
   width: 198px;
@@ -169,9 +146,7 @@ body {
   }
 }
 // #endregion
-
 // #region [rgba(46, 204, 113, 0.15)] Tela de Login
-// Quadro / Card de Login (Desktop node-id 46:3277 & Mobile node-id 43:1840)
 .login-card {
   width: 100%;
   max-width: 681px;
@@ -201,7 +176,6 @@ body {
   gap: 5px;
 }
 
-// Botões Específicos do Design
 .btn-entrar {
   width: 172px;
   height: 48px;
@@ -283,9 +257,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(155, 89, 182, 0.15)] Fluxo de Cadastro - Estrutura e Badges de Progresso
-// Card Geral de Cadastro Multi-Etapas (Desktop node-id 46:4122 & Mobile node-id 43:1861)
+// #region [rgba(155, 89, 182, 0.15)] Fluxo de Cadastro
 .cadastro-card {
   width: 100%;
   max-width: 480px;
@@ -301,7 +273,6 @@ body {
   }
 }
 
-// Badge de Identificação do Passo
 .step-badge {
   background-color: $color-badge-bg;
   font-size: 11px;
@@ -317,7 +288,6 @@ body {
   }
 }
 
-// Cabeçalho de cada Passo
 .step-header-box {
   background-color: $color-input-bg;
   display: flex;
@@ -337,7 +307,6 @@ body {
   }
 }
 
-// Seção Interna Estilizada
 .step-section-box {
   gap: 10px;
 
@@ -352,7 +321,6 @@ body {
   }
 }
 
-// Botão de Avanço do Passo
 .btn-step-next {
   width: 172px;
   height: 48px;
@@ -379,8 +347,7 @@ body {
 }
 
 // #endregion
-
-// #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1 - Usuário e Senha
+// #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1
 .checklist-group {
   padding-left: 2px;
 }
@@ -398,8 +365,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(26, 188, 156, 0.15)] Cadastro Passo 2 - Riot ID
+// #region [rgba(26, 188, 156, 0.15)] Cadastro Passo 2
 .input-box-dark {
   width: 100%;
   height: 48px;
@@ -424,8 +390,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(241, 196, 15, 0.15)] Cadastro Passo 3 - Informações de Jogo e Matchmaking
+// #region [rgba(241, 196, 15, 0.15)] Cadastro Passo 3
 .rank-card-item {
   background-color: rgba(13, 20, 30, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -564,8 +529,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4 - Agentes em Jogo / Aptos
+// #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4
 .agents-grid-scroll {
   max-height: 380px;
   overflow-y: auto;
@@ -664,8 +628,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(233, 30, 99, 0.15)] Cadastro Passo 5 - Personalização (Preferidos e Favorito)
+// #region [rgba(233, 30, 99, 0.15)] Cadastro Passo 5
 .btn-save-section {
   background-color: $color-btn-entrar;
   color: #ffffff;
@@ -684,8 +647,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(0, 188, 212, 0.15)] Cadastro Passo 6 - Disponibilidade e Comunicação
+// #region [rgba(0, 188, 212, 0.15)] Cadastro Passo 6
 .btn-day-pill {
   flex: 1;
   height: 38px;
@@ -797,8 +759,7 @@ body {
   }
 }
 // #endregion
-
-// #region [rgba(149, 165, 166, 0.15)] Rodapé Institucional
+// #region [rgba(149, 165, 166, 0.15)] Rodapé
 .login-footer {
   position: relative;
   z-index: 2;
@@ -827,4 +788,5 @@ body {
     display: none;
   }
 }
+
 // #endregion
