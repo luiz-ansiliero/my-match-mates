@@ -11875,7 +11875,8 @@ textarea.form-control-lg {
   position: absolute;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -11887,10 +11888,6 @@ html, body {
 
 .login-page-wrapper {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-image: url("img/background.png");
   background-size: cover;
   background-position: center;
@@ -11909,11 +11906,6 @@ html, body {
 .login-content {
   position: relative;
   z-index: 2;
-  flex: 1 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 1rem;
 }
 
 .logo-badge {
@@ -11921,17 +11913,13 @@ html, body {
   width: 198px;
   height: 187px;
   background: #141b25;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0px 0px 20px 0px rgba(255, 135, 142, 0.73);
   border: 1px solid rgba(255, 135, 142, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .logo-badge img {
-  width: 175px;
-  height: 175px;
+  width: 215px;
+  height: 215px;
   object-fit: contain;
   user-select: none;
   pointer-events: none;
@@ -11946,8 +11934,8 @@ html, body {
     height: 160px;
   }
   .logo-badge img {
-    width: 140px;
-    height: 140px;
+    width: 190px;
+    height: 190px;
   }
 }
 
@@ -11955,13 +11943,7 @@ html, body {
   width: 100%;
   max-width: 681px;
   background-color: #0d141e;
-  border-radius: 20px;
-  padding: 41px 24px 36px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 26px;
   transition: all 0.3s ease-in-out;
 }
@@ -11979,23 +11961,27 @@ html, body {
   max-width: 327px;
 }
 
+.form-control {
+  height: 45px;
+}
+
+.container-btns {
+  gap: 5px;
+}
+
 .btn-entrar {
   width: 172px;
   height: 48px;
   background-color: #ff525c;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-weight: 700;
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 0.55px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0px 0px 14px 0px rgba(255, 82, 92, 0.73);
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 .btn-entrar:hover, .btn-entrar:focus {
@@ -12015,10 +12001,7 @@ html, body {
   background-color: #585858;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-weight: 700;
   font-size: 15px;
-  text-transform: uppercase;
   letter-spacing: 0.55px;
   display: inline-flex;
   align-items: center;
@@ -12037,12 +12020,7 @@ html, body {
 }
 
 .divider-or {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   margin: 0;
-  width: 100%;
 }
 .divider-or .divider-line {
   width: 42px;
@@ -12063,13 +12041,7 @@ html, body {
   width: 100%;
   max-width: 480px;
   background-color: #0d141e;
-  border-radius: 20px;
-  padding: 30px 32px 34px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   gap: 16px;
   transition: all 0.3s ease-in-out;
 }
@@ -12082,80 +12054,45 @@ html, body {
 }
 
 .step-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   background-color: #8f192a;
-  padding: 4px 12px;
-  border-radius: 9999px;
   font-size: 11px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.55px;
   color: #ff9da0;
-  align-self: flex-start;
 }
 .step-badge .step-dot {
   width: 6px;
   height: 6px;
   background-color: #ff525c;
-  border-radius: 50%;
   display: inline-block;
 }
 
 .step-header-box {
   background-color: #19202b;
-  border-radius: 10px;
-  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 .step-header-box .step-title {
-  font-size: 26px;
-  font-weight: 700;
   color: #dce2f2;
   letter-spacing: -0.5px;
   margin: 0;
 }
 .step-header-box .step-subtitle {
-  font-size: 13px;
   font-weight: 400;
-  color: #e4bdbc;
   line-height: 1.5;
   margin: 0;
 }
 
 .step-section-box {
-  background-color: #182232;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 10px;
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 .step-section-box .section-label {
   font-size: 15px;
-  font-weight: 700;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin: 0;
 }
-.step-section-box .section-label .section-pill-limit {
-  font-size: 11px;
-  font-weight: 700;
-  background-color: rgba(255, 82, 92, 0.2);
-  color: #ff525c;
-  padding: 2px 8px;
-  border-radius: 9999px;
-  margin-left: auto;
-}
 .step-section-box .section-desc {
-  font-size: 12px;
-  color: #aeaeae;
   margin: 0;
 }
 
@@ -12165,17 +12102,13 @@ html, body {
   background-color: #ff525c;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-weight: 700;
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 0.55px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 10px auto 0;
   cursor: pointer;
-  box-shadow: 0px 0px 14px 0px rgba(255, 82, 92, 0.73);
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -12186,48 +12119,17 @@ html, body {
   transform: translateY(-1px);
 }
 
-.btn-step-prev {
-  background: none;
-  border: none;
-  color: #e4bdbc;
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: underline;
-  cursor: pointer;
-  margin: 6px auto 0;
-  display: block;
-  text-align: center;
-  transition: color 0.2s ease;
-}
-.btn-step-prev:hover {
-  color: #ffffff;
-}
-
 .checklist-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
   padding-left: 2px;
 }
 
-.checklist-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: #aeaeae;
-}
 .checklist-item .check-icon {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
   background-color: #aeaeae;
   color: #0d141e;
   font-size: 10px;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   flex-shrink: 0;
 }
@@ -12235,7 +12137,7 @@ html, body {
 .input-box-dark {
   width: 100%;
   height: 48px;
-  background-color: #0d141e;
+  background-color: #19202b;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   padding: 12px 14px;
@@ -12573,7 +12475,8 @@ html, body {
   background-color: rgba(30, 42, 60, 0.95);
   box-shadow: 0 0 8px rgba(255, 82, 92, 0.4);
 }
-.comm-card-item.active i, .comm-card-item.active .comm-name {
+.comm-card-item.active i,
+.comm-card-item.active .comm-name {
   color: #ff525c;
 }
 
@@ -12582,27 +12485,19 @@ html, body {
   z-index: 2;
   background-color: #070e19;
   padding: 1.75rem 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 .login-footer .footer-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #dce2f2;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin: 0;
 }
 .login-footer .footer-sub {
-  font-size: 12px;
   font-weight: 500;
-  color: #e4bdbc;
   letter-spacing: 0.24px;
   margin: 0;
 }
 .login-footer .footer-copy {
-  font-size: 12px;
   font-weight: 500;
-  color: #e4bdbc;
   letter-spacing: 0.24px;
   margin: 0;
 }
@@ -12611,3 +12506,5 @@ html, body {
     display: none;
   }
 }
+
+/*# sourceMappingURL=style.css.map */

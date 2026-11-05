@@ -25,21 +25,31 @@
   <body>
     <!-- #region [rgba(74, 144, 226, 0.15)] Base, Reset e Configurações Globais -->
     <div class="login-page-wrapper min-vh-100 d-flex flex-column justify-content-between">
-      <main class="login-content flex-grow-1 d-flex align-items-center justify-content-center p-3 p-md-4">
+      <main
+        class="login-content flex-grow-1 d-flex align-items-center justify-content-center p-3 p-md-4"
+      >
         <!-- #endregion -->
 
         <!-- #region [rgba(46, 204, 113, 0.15)] Tela de Login -->
         <!-- Página 1: Tela de Login Inicial (Desktop node-id 46:3277 / Mobile node-id 43:1840) -->
-        <section id="page-login" class="login-card card border-0 rounded-4 shadow-lg p-4 p-md-5 d-flex flex-column align-items-center" data-node-id="46:3277">
-          
+        <section
+          id="page-login"
+          class="login-card card border-0 rounded-4 shadow-lg p-4 p-md-5 d-flex flex-column align-items-center"
+          data-node-id="46:3277"
+        >
           <!-- #region [rgba(230, 126, 34, 0.15)] Identidade Visual e Logo Badge -->
           <!-- Logo com 175px para preenchimento total do espaço disponível -->
-          <div class="logo-badge rounded-3 d-flex align-items-center justify-content-center mb-2" data-node-id="46:3279">
+          <div
+            class="logo-badge rounded-5 d-flex align-items-center justify-content-center mb-2"
+            data-node-id="46:3279"
+          >
             <img
               src="img/logo.png"
               alt="My Match Mates Logo"
-              style="width: 175px; height: 175px; object-fit: contain;"
-              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('d-none');"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.classList.remove('d-none');
+              "
             />
             <div
               class="fallback-logo d-none w-100 h-100 d-flex align-items-center justify-content-center fw-bold fs-3 text-danger"
@@ -50,7 +60,12 @@
           <!-- #endregion -->
 
           <!-- Formulário de Autenticação -->
-          <form class="login-form-container d-flex flex-column align-items-center w-100" action="#" method="POST" onsubmit="event.preventDefault();">
+          <form
+            class="login-form-container d-flex flex-column align-items-center w-100"
+            action="#"
+            method="POST"
+            onsubmit="event.preventDefault()"
+          >
             <!-- Input Usuário (node-id 46:3282 / 43:1845) -->
             <div class="w-100 mb-3">
               <label for="usuario" class="visually-hidden">Usuário</label>
@@ -66,7 +81,7 @@
             </div>
 
             <!-- Input Senha (node-id 46:3285 / 43:1848) -->
-            <div class="w-100 mb-3">
+            <div class="w-100 mb-4">
               <label for="senha" class="visually-hidden">Senha</label>
               <input
                 type="password"
@@ -80,21 +95,33 @@
             </div>
 
             <!-- Container com gap de 5px centralizado para os botões Entrar e Cadastrar -->
-            <div class="d-flex flex-column align-items-center justify-content-center w-100" style="gap: 5px;">
+            <div
+              class="container-btns d-flex flex-column align-items-center justify-content-center w-100"
+            >
               <!-- Botão Entrar (node-id 46:3289 / 43:1851) -->
-              <button type="submit" class="btn btn-danger btn-entrar fw-bold text-uppercase rounded-3 shadow" data-node-id="46:3289">
+              <button
+                type="submit"
+                class="btn btn-danger btn-entrar fw-bold text-uppercase rounded-3 shadow"
+              >
                 Entrar
               </button>
 
               <!-- Divisor "ou" (node-id 46:3292 / 43:1858) -->
-              <div class="divider-or d-flex align-items-center justify-content-center gap-2 w-100" aria-hidden="true">
+              <div
+                class="divider-or d-flex align-items-center justify-content-center gap-2 w-100"
+                aria-hidden="true"
+              >
                 <span class="divider-line"></span>
                 <span class="divider-text text-uppercase fw-bold small text-light">ou</span>
                 <span class="divider-line"></span>
               </div>
 
               <!-- Botão Cadastrar - Redireciona para o fluxo de cadastro -->
-              <a href="cadastro.html" class="btn btn-secondary btn-cadastrar fw-bold text-uppercase rounded-3" data-node-id="46:3296" role="button">
+              <a
+                href="cadastro.html"
+                class="btn btn-secondary btn-cadastrar fw-bold text-uppercase rounded-3"
+                role="button"
+              >
                 Cadastrar
               </a>
             </div>
@@ -107,11 +134,13 @@
       <!-- #endregion -->
 
       <!-- #region [rgba(149, 165, 166, 0.15)] Rodapé Institucional -->
-      <footer class="login-footer py-4 px-4 px-md-5 border-top border-secondary border-opacity-10" data-node-id="46:3299">
+      <footer class="login-footer py-4 px-4 px-md-5 border-top border-secondary border-opacity-10">
         <div class="container-fluid px-0">
           <div class="row align-items-center gy-2">
             <div class="col-12 col-md-6 d-flex align-items-center gap-2">
-              <h2 class="footer-title fw-bold text-uppercase fs-5 mb-0 text-light">MY MATCH MATES</h2>
+              <h2 class="footer-title fw-bold text-uppercase fs-5 mb-0 text-light">
+                MY MATCH MATES
+              </h2>
               <span class="footer-sub small text-muted">• Valorant Duo finder</span>
             </div>
             <div class="col-12 col-md-6 text-md-end">
