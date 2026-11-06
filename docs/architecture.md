@@ -12,7 +12,31 @@ Este documento detalha a arquitetura técnica, a stack tecnológica, o modelo de
 
 ---
 
-## 2. Modelo de Dados (Diagrama ER)
+### 2. Paleta de Cores (Customização)
+
+As variáveis de cor do framework foram escolhidas para induzir o usuário ao erro ou alertá-lo (tarde demais) sobre as taxas:
+
+- **Cor Primária (Botões/Seleções):** `#FF4654`
+  - _Uso:_ Botões de formulários, seleções e opções interagíveis ao usuário.
+- **Cor Secundária (Emphasis):** `#BA3B46`
+  - _Uso:_ Pequenos títulos ou seleções já feitas.
+- **Cor de destaque de texto (Contrast):** `#FFFFFF`
+  - _Uso:_ Usado em textos explicativos e títulos.
+- **Cor de Fundo (Background):** `#0D141E`
+  - _Uso:_ Fundo de todas as páginas após o login.
+- **Cor de destaque de fundo (Background Emphasis):** `#17212F`
+  - _Uso:_ Usado em abas específicas para delimitar áreas, sobrepõe parcialmente o fundo.
+- **Cor de espera: (Waiting)** `#585858`
+  - _Uso:_ Usado em botões inativos e para acessar a aba de cadastro.
+
+### 3. Tipografia
+
+Importada via Google Fonts para substituir a fonte padrão do navegador e dar um ar mais moderno:
+
+- **Títulos (H1 a H6) e subtítulos:** `Space Grotesk`.
+- **Textos Corridos, Inputs e Tabelas de Extrato:** `Space Grotesk, Arial`.
+
+## 4. Modelo de Dados (Diagrama ER)
 
 ```mermaid
 erDiagram
@@ -40,6 +64,52 @@ erDiagram
     }
 
 ```
+
+## 5. Dicionário de Dados — Coleção `users`
+
+A coleção `users` centraliza a conta e as preferências táticas de cada jogador em uma única estrutura no `db.json`.
+
+### 1. Credenciais e Identificação do Usuário
+
+- **`id`** _(string, Obrigatório)_ — Identificador único da conta gerado automaticamente pelo JSON Server.  
+  _Exemplo:_ `"1"`
+- **`username`** _(string, Obrigatório)_ — Nome de usuário utilizado para login na aplicação.  
+  _Exemplo:_ `"impostodereyna"`
+- **`password`** _(string, Obrigatório)_ — Senha de acesso validada durante o fluxo de autenticação.  
+  _Exemplo:_ `"Senha123@"`
+- **`riotId`** _(string, Obrigatório)_ — Nickname e Tag oficiais do jogo exibidos no card e utilizados no botão "Copiar ID".  
+  _Exemplo:_ `"ImpostoDeReyna#2204"`
+
+### 2. Patente e Disponibilidade em Tempo Real
+
+- **`elo`** _(string, Obrigatório)_ — Patente atual do jogador no Valorant, utilizada no cruzamento de dados com a Valorant-API.  
+  _Exemplo:_ `"Diamante"`, `"Radiante"`, `"Ferro"`
+- **`eloDivision`** _(string, Obrigatório)_ — Subdivisão da patente competitiva do usuário.  
+  _Exemplo:_ `"I"`, `"II"`, `"III"`
+- **`activeLobby`** _(boolean, Obrigatório)_ — Define se o jogador está visível no feed da aba "Explorar" procurando grupo no momento.  
+  _Exemplo:_ `true` ou `false`
+
+### 3. Preferências Táticas e Pool de Agentes
+
+- **`preferredRoles`** _(array de strings, Obrigatório)_ — Lista com até 2 funções táticas prioritárias no jogo.  
+  _Exemplo:_ `["Controlador", "Duelista"]`
+- **`favoriteAgent`** _(string, Obrigatório)_ — Agente principal que fornece a imagem de avatar/foto de perfil no card.  
+  _Exemplo:_ `"Reyna"`
+- **`preferredAgents`** _(array de strings, Obrigatório)_ — Lista com até 2 agentes prioritários da escolha do jogador.  
+  _Exemplo:_ `["Omen", "Reyna"]`
+- **`aptAgents`** _(array de strings, Obrigatório)_ — Pool de até 8 agentes que o jogador domina e sabe jogar em partidas competitivas.  
+  _Exemplo:_ `["Reyna", "Omen", "Jett", "Killjoy", "Sova", "Viper", "Fade", "Clove"]`
+
+### 4. Rotina e Comunicação
+
+- **`activeDays`** _(array de strings, Obrigatório)_ — Dias da semana em que o usuário costuma jogar.  
+  _Exemplo:_ `["Sex", "Sáb", "Dom"]`
+- **`timeSlots`** _(array de strings, Obrigatório)_ — Turnos habituais de disponibilidade para partidas.  
+  _Exemplo:_ `["Manhã", "Tarde", "Noite", "Madrugada"]`
+- **`communication`** _(array de strings, Obrigatório)_ — Meios de comunicação aceitos pelo jogador durante a partida.  
+  _Exemplo:_ `["Microfone", "Discord Call", "Chat/ping"]`
+
+## 6. Estrutura do Banco de Dados (db.json)
 
 ```
 {
