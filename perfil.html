@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Match Mates - Meu Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- #region [rgba(74, 144, 226, 0.15)] Geral e Compartilhado -->
+    <header class="z-content navbar navbar-expand-lg navbar-explorar px-4">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center gap-3">
+          <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <figure
+              class="logo-nav-box d-flex align-items-center justify-content-center rounded-3 mb-0"
+            >
+              <img src="img/logo.png" alt="MM" />
+            </figure>
+            <span class="brand-title fw-bold text-white d-none d-md-inline">MY MATCH MATES</span>
+          </a>
+
+          <span class="badge-duo rounded-pill px-2 py-1 d-none d-md-inline">VALORANT DUO</span>
+
+          <p class="d-none d-xl-flex align-items-center gap-2 ms-2 mb-0 online-counter">
+            <span class="status-dot"></span>
+            <strong class="text-white">142</strong>
+            <span class="text-muted-custom">jogadores disponíveis</span>
+          </p>
+        </div>
+
+        <div class="d-flex align-items-center gap-4">
+          <nav class="d-none d-md-flex align-items-center gap-3">
+            <a href="index.html" class="nav-link-explorar">EXPLORAR</a>
+            <a href="perfil.html" class="nav-btn-explorar active">MEU PERFIL</a>
+          </nav>
+
+          <figure class="user-profile-pill d-flex align-items-center gap-2 mb-0">
+            <img
+              src="img/agents/reyna.png"
+              alt="Avatar"
+              class="user-avatar rounded-3"
+              onerror="this.src = 'https://placehold.co/40x40/ff4654/ffffff?text=R'"
+            />
+            <figcaption class="d-flex flex-column lh-sm">
+              <span class="user-name fw-bold text-white">ImpostoDeReyna</span>
+              <span class="user-status">Online</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- #region [rgba(74, 144, 226, 0.15)] Geral e Compartilhado -->
+      <!-- #endregion -->
+    </header>
+    <!-- #endregion -->
+
+    <!-- #region [rgba(233, 30, 99, 0.15)] Tela Meu Perfil -->
+    <main class="flex-grow-1 py-4 px-3 px-md-4">
+      <div class="container-fluid">
+        <header class="mb-4 col-12 col-lg-7">
+          <h1 class="fs-2 fw-bold text-white mb-2">CONFIGURAR PERFIL DE JOGO</h1>
+          <p class="small text-muted-custom mb-3">
+            Preencha os parâmetros táticos requisitados para encontrar seu duo ou esquadrão ideal.
+          </p>
+          <p
+            class="d-flex align-items-center gap-2 pt-2 border-top border-secondary border-opacity-25 mb-0"
+          >
+            <span class="badge-version d-inline-flex align-items-center gap-1">
+              <i class="bi bi-file-earmark-code"></i> Versão 1.1
+            </span>
+            <small class="text-secondary fw-semibold">• V26 - Ato II</small>
+          </p>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-7 d-flex flex-column gap-4">
+            <article class="profile-outer-frame">
+              <section class="panel-card p-3 p-md-4">
+                <header class="d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-person-badge-fill text-primary fs-5"></i>
+                  <h2 class="fs-6 fw-bold text-white m-0">Riot ID</h2>
+                </header>
+
+                <fieldset class="d-flex gap-2 border-0 p-0 m-0">
+                  <div
+                    class="riot-id-input-group d-flex align-items-center flex-grow-1 rounded-2 overflow-hidden"
+                  >
+                    <span class="riot-at-addon d-flex align-items-center justify-content-center"
+                      >@</span
+                    >
+                    <input
+                      type="text"
+                      class="form-control bg-transparent border-0 shadow-none text-white fw-bold h-100"
+                      value="ImpostoDeReyna#2204"
+                      readonly
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-outline-dark-custom d-flex align-items-center gap-2 px-3 rounded-2"
+                  >
+                    <i class="bi bi-copy"></i> Copiar
+                  </button>
+                </fieldset>
+
+                <small class="text-secondary d-block mt-2"
+                  >Seu ID fica visível para outros usuários</small
+                >
+              </section>
+            </article>
+
+            <article class="profile-outer-frame">
+              <section class="panel-card p-3 p-md-4">
+                <header class="d-flex align-items-center gap-2 mb-1">
+                  <i class="bi bi-trophy-fill text-primary fs-5"></i>
+                  <h2 class="fs-6 fw-bold text-white m-0">Matchmaking</h2>
+                </header>
+                <p class="small text-secondary mb-4">
+                  Selecione o elo em que você está para encontrar jogadores do seu nível!
+                </p>
+
+                <ul class="row g-3 list-unstyled mb-0">
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/ferro.png" alt="Ferro" />
+                      <figcaption class="rank-name">Ferro</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/bronze.png" alt="Bronze" />
+                      <figcaption class="rank-name">Bronze</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/prata.png" alt="Prata" />
+                      <figcaption class="rank-name">Prata</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/ouro.png" alt="Ouro" />
+                      <figcaption class="rank-name">Ouro</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/platina.png" alt="Platina" />
+                      <figcaption class="rank-name">Platina</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item active mb-0">
+                      <img src="img/ranks/diamante.png" alt="Diamante" />
+                      <figcaption class="rank-name">Diamante</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/ascendente.png" alt="Ascendente" />
+                      <figcaption class="rank-name">Ascendente</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/imortal.png" alt="Imortal" />
+                      <figcaption class="rank-name">Imortal</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col-6 col-sm-3">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/radiante.png" alt="Radiante" />
+                      <figcaption class="rank-name">Radiante</figcaption>
+                    </figure>
+                  </li>
+                </ul>
+
+                <footer class="d-flex justify-content-center mt-4">
+                  <nav class="tier-division-bar px-3 py-2 rounded-3">
+                    <span class="division-label">Posição atual:</span>
+                    <strong class="pos-rank me-1">Diamante</strong>
+                    <button type="button" class="btn-division">I</button>
+                    <button type="button" class="btn-division active">II</button>
+                    <button type="button" class="btn-division">III</button>
+                  </nav>
+                </footer>
+              </section>
+            </article>
+
+            <article class="profile-outer-frame">
+              <section class="panel-card p-3 p-md-4">
+                <header class="d-flex align-items-center justify-content-between mb-3">
+                  <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-people-fill text-primary fs-5"></i>
+                    <h2 class="fs-6 fw-bold text-white m-0">Funções preferidas</h2>
+                  </span>
+                  <span class="agent-stat-pill dark">Até duas</span>
+                </header>
+
+                <ul class="row g-3 list-unstyled mb-0">
+                  <li class="col-12 col-sm-6">
+                    <div class="role-card-item active py-3 px-3">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/controlador.png" alt="contr" />
+                        </span>
+                        <span class="role-title">Controlador</span>
+                      </span>
+                      <span class="check-circle"><i class="bi bi-check"></i></span>
+                    </div>
+                  </li>
+                  <li class="col-12 col-sm-6">
+                    <div class="role-card-item active py-3 px-3">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/duelista.png" alt="duelista" />
+                        </span>
+                        <span class="role-title">Duelista</span>
+                      </span>
+                      <span class="check-circle"><i class="bi bi-check"></i></span>
+                    </div>
+                  </li>
+                  <li class="col-12 col-sm-6">
+                    <div class="role-card-item py-3 px-3">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/iniciador.png" alt="iniciador" />
+                        </span>
+                        <span class="role-title">Iniciador</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col-12 col-sm-6">
+                    <div class="role-card-item py-3 px-3">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/sentinela.png" alt="sentinela" />
+                        </span>
+                        <span class="role-title">Sentinela</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-5 d-flex flex-column gap-4">
+            <article class="profile-outer-frame">
+              <section class="panel-card p-3 p-md-4">
+                <header
+                  class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
+                >
+                  <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-check-fill text-primary fs-5"></i>
+                    <h2 class="fs-6 fw-bold text-white m-0">Agentes</h2>
+                  </span>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="agent-stat-pill gold">1 Favorito</span>
+                    <span class="agent-stat-pill red">2 preferidos</span>
+                    <span class="agent-stat-pill dark">8 aptos</span>
+                  </div>
+                </header>
+
+                <ul class="row g-2 mb-3 list-unstyled">
+                  <li class="col-3">
+                    <figure class="agent-card-item preferred mb-0">
+                      <span class="agent-check-badge red"><i class="bi bi-check"></i></span>
+                      <span class="badge-status-sub"><i class="bi bi-star-fill"></i></span>
+                      <img src="img/agents/reyna.png" alt="Reyna" class="agent-avatar" />
+                      <figcaption class="agent-name">Reyna</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item preferred mb-0">
+                      <span class="agent-check-badge red"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/omen.png" alt="Omen" class="agent-avatar" />
+                      <figcaption class="agent-name">Omen</figcaption>
+                      <span class="agent-role">Controlador</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/jett.png" alt="Jett" class="agent-avatar" />
+                      <figcaption class="agent-name">Jett</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/killjoy.png" alt="Killjoy" class="agent-avatar" />
+                      <figcaption class="agent-name">Killjoy</figcaption>
+                      <span class="agent-role">Sentinela</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/sova.png" alt="Sova" class="agent-avatar" />
+                      <figcaption class="agent-name">Sova</figcaption>
+                      <span class="agent-role">Iniciador</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/viper.png" alt="Viper" class="agent-avatar" />
+                      <figcaption class="agent-name">Viper</figcaption>
+                      <span class="agent-role">Controlador</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/fade.png" alt="Fade" class="agent-avatar" />
+                      <figcaption class="agent-name">Fade</figcaption>
+                      <span class="agent-role">Iniciador</span>
+                    </figure>
+                  </li>
+                  <li class="col-3">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"><i class="bi bi-check"></i></span>
+                      <img src="img/agents/clove.png" alt="Clove" class="agent-avatar" />
+                      <figcaption class="agent-name">Clove</figcaption>
+                      <span class="agent-role">Controlador</span>
+                    </figure>
+                  </li>
+                </ul>
+
+                <button type="button" class="btn btn-red w-100 fw-bold small py-2 rounded-3">
+                  Editar seleção
+                </button>
+              </section>
+            </article>
+
+            <article class="profile-outer-frame">
+              <section class="panel-card p-3 p-md-4">
+                <header class="d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-clock text-primary fs-5"></i>
+                  <h2 class="fs-6 fw-bold text-white m-0">Horários e disponibilidade</h2>
+                </header>
+
+                <p class="small text-secondary mb-2">Faixa horária habitual:</p>
+                <ul class="row g-2 mb-3 list-unstyled">
+                  <li class="col-6">
+                    <div class="slot-card-item">
+                      <span class="slot-name">Manhã</span>
+                      <span class="slot-time">08h - 12h</span>
+                    </div>
+                  </li>
+                  <li class="col-6">
+                    <div class="slot-card-item">
+                      <span class="slot-name">Tarde</span>
+                      <span class="slot-time">13h - 18h</span>
+                    </div>
+                  </li>
+                  <li class="col-6">
+                    <div class="slot-card-item active">
+                      <span class="slot-name">Noite</span>
+                      <span class="slot-time">19h - 00h</span>
+                    </div>
+                  </li>
+                  <li class="col-6">
+                    <div class="slot-card-item active">
+                      <span class="slot-name">Madrugada</span>
+                      <span class="slot-time">00h - 05h</span>
+                    </div>
+                  </li>
+                </ul>
+
+                <p class="small text-secondary mb-2">Dias ativos na semana:</p>
+                <nav class="row d-flex gap-2">
+                  <button type="button" class="col-1 btn-day-pill">Seg</button>
+                  <button type="button" class="col-1 btn-day-pill">Ter</button>
+                  <button type="button" class="col-1 btn-day-pill">Qua</button>
+                  <button type="button" class="col-1 btn-day-pill">Qui</button>
+                  <button type="button" class="col-1 btn-day-pill active">Sex</button>
+                  <button type="button" class="col-1 btn-day-pill active">Sáb</button>
+                  <button type="button" class="col-1 btn-day-pill active">Dom</button>
+                </nav>
+              </section>
+            </article>
+
+            <article class="profile-outer-frame">
+              <section class="panel-card p-3 p-md-4">
+                <header class="d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-mic-fill text-primary fs-5"></i>
+                  <h2 class="fs-6 fw-bold text-white m-0">Comunicação e bate-papo</h2>
+                </header>
+
+                <ul class="row g-2 list-unstyled mb-0">
+                  <li class="col-4">
+                    <div class="comm-card-item active">
+                      <i class="bi bi-mic-fill"></i>
+                      <span class="comm-name">Microfone</span>
+                    </div>
+                  </li>
+                  <li class="col-4">
+                    <div class="comm-card-item active">
+                      <i class="bi bi-discord"></i>
+                      <span class="comm-name">Discord Call</span>
+                    </div>
+                  </li>
+                  <li class="col-4">
+                    <div class="comm-card-item">
+                      <i class="bi bi-chat-dots"></i>
+                      <span class="comm-name">Chat/ping</span>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- #endregion -->
+
+    <!-- #region [rgba(74, 144, 226, 0.15)] Geral e Compartilhado -->
+    <footer class="login-footer mt-auto">
+      <div
+        class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <h2 class="footer-title fw-bold text-white fs-5">MY MATCH MATES</h2>
+          <span class="footer-sub text-muted-custom small">• Valorant Duo finder</span>
+        </div>
+        <p class="footer-copy text-muted-custom small">
+          © 2026 MY MATCH MATES. Não afiliado à Riot Games Inc. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+    <nav
+      class="mobile-bottom-nav fixed-bottom d-flex d-md-none align-items-center justify-content-around"
+      aria-label="Navegação mobile"
+    >
+      <a
+        href="index.html"
+        class="mobile-nav-item active d-flex flex-column align-items-center justify-content-center text-decoration-none"
+      >
+        <i class="bi bi-broadcast"></i>
+        <span>EXPLORAR</span>
+      </a>
+
+      <a
+        href="perfil.html"
+        class="mobile-nav-item d-flex flex-column align-items-center justify-content-center text-decoration-none"
+      >
+        <i class="bi bi-person-badge-fill"></i>
+        <span>MEU PERFIL</span>
+      </a>
+    </nav>
+    <!-- #endregion -->
+  </body>
+</html>
