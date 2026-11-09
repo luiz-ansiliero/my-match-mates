@@ -1,33 +1,529 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Match Mates</title>
-
-    <!-- Google Fonts: Space Grotesk (Figma node-id 49:5024) -->
+    <title>My Match Mates - Explorar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Estilo unificado gerado via SASS (@import Bootstrap + Custom SCSS) -->
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <!-- #region [rgba(74, 144, 226, 0.15)] Base, Reset e Configurações Globais -->
-    <div class="container back position-absolute">
-      <img src="img/background.png" alt="imagem de fundo" class="img-fluid" />
-    </div>
+  <body class="background min-vh-100 d-flex flex-column justify-content-between">
+    <!-- #region [rgba(74, 144, 226, 0.15)] Geral e Compartilhado -->
+    <header class="z-content navbar navbar-expand-lg navbar-explorar px-4">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center gap-3">
+          <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <figure
+              class="logo-nav-box d-flex align-items-center justify-content-center rounded-3 mb-0"
+            >
+              <img src="img/logo.png" alt="MM" />
+            </figure>
+            <span class="brand-title fw-bold text-white d-none d-md-inline">MY MATCH MATES</span>
+          </a>
+
+          <span class="badge-duo rounded-pill px-2 py-1 d-none d-md-inline">VALORANT DUO</span>
+
+          <p class="d-none d-xl-flex align-items-center gap-2 ms-2 mb-0 online-counter">
+            <span class="status-dot"></span>
+            <strong class="text-white">142</strong>
+            <span class="text-muted-custom">jogadores disponíveis</span>
+          </p>
+        </div>
+
+        <div class="d-flex align-items-center gap-4">
+          <nav class="d-none d-md-flex align-items-center gap-3">
+            <a href="index.html" class="nav-btn-explorar active">EXPLORAR</a>
+            <a href="perfil.html" class="nav-link-explorar">MEU PERFIL</a>
+          </nav>
+
+          <figure class="user-profile-pill d-flex align-items-center gap-2 mb-0">
+            <img
+              src="img/agents/reyna.png"
+              alt="Avatar"
+              class="user-avatar rounded-3"
+              onerror="this.src = 'https://placehold.co/40x40/ff4654/ffffff?text=R'"
+            />
+            <figcaption class="d-flex flex-column lh-sm">
+              <span class="user-name fw-bold text-white">ImpostoDeReyna</span>
+              <span class="user-status">Online</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </header>
     <!-- #endregion -->
 
-    <!-- Bootstrap Bundle JS -->
+    <!-- #region [rgba(230, 126, 34, 0.15)] Tela Explorar -->
+    <main class="z-content flex-grow-1 py-4 px-3 px-md-4">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <!-- #region [rgba(26, 188, 156, 0.15)] Lateral Esquerda - Lobby e Filtros -->
+          <aside class="col-12 col-lg-4 d-flex flex-column gap-3">
+            <section class="panel-card p-3">
+              <header class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center gap-2">
+                  <span
+                    class="lobby-icon-box d-flex align-items-center justify-content-center rounded-3"
+                  >
+                    <i class="bi bi-clock"></i>
+                  </span>
+                  <h2 class="fw-bold text-white fs-6 mb-0">Lobby Ativo</h2>
+                </div>
+                <div class="lobby-switch active" role="switch" aria-checked="true">
+                  <span class="switch-knob"></span>
+                </div>
+              </header>
+
+              <footer class="d-flex align-items-baseline justify-content-between pt-1">
+                <p class="d-flex align-items-baseline gap-2 mb-0">
+                  <strong class="fs-3 lh-1 text-white">142</strong>
+                  <span class="small text-muted-custom">Jogadores disponíveis</span>
+                </p>
+                <span class="small text-secondary">Turno Noite</span>
+              </footer>
+            </section>
+
+            <section class="panel-card p-3 d-flex flex-column gap-3">
+              <section>
+                <h2 class="filter-section-title mb-2">FAIXA DE ELO PERMITIDA</h2>
+                <div
+                  class="elo-range-box d-flex align-items-center justify-content-between p-2 rounded-3"
+                >
+                  <figure class="d-flex align-items-center gap-2 mb-0">
+                    <span class="elo-icon-wrapper rounded-2">
+                      <img src="img/ranks/platina.png" alt="Platina" />
+                    </span>
+                    <figcaption class="d-flex flex-column lh-1">
+                      <strong class="small text-white">Platina II</strong>
+                      <small class="text-muted-custom">Mínimo</small>
+                    </figcaption>
+                  </figure>
+
+                  <i class="bi bi-arrow-left-right text-muted-custom fs-6"></i>
+
+                  <figure class="d-flex align-items-center gap-2 mb-0">
+                    <span class="elo-icon-wrapper rounded-2">
+                      <img src="img/ranks/ascendente.png" alt="Ascendente" />
+                    </span>
+                    <figcaption class="d-flex flex-column lh-1">
+                      <strong class="small text-white">Ascendente II</strong>
+                      <small class="text-muted-custom">Máximo</small>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <hr class="border-secondary border-opacity-25 my-0" />
+
+              <header class="d-flex align-items-center justify-content-between">
+                <span class="d-flex align-items-center gap-2">
+                  <i class="bi bi-sliders text-primary"></i>
+                  <strong class="text-white small">FILTROS</strong>
+                </span>
+                <a href="#" class="small fw-bold text-primary text-decoration-none">LIMPAR</a>
+              </header>
+
+              <section>
+                <h3 class="filter-section-title mb-2">FUNÇÃO REQUERIDA</h3>
+                <ul class="row g-2 list-unstyled mb-0">
+                  <li class="col-6">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/duelista.png" alt="duelista" />
+                        </span>
+                        <span class="role-title">Duelista</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col-6">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/controlador.png" alt="controlador" />
+                        </span>
+                        <span class="role-title">Controlador</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col-6">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/iniciador.png" alt="iniciador" />
+                        </span>
+                        <span class="role-title">Iniciador</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col-6">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <span class="val-role-icon">
+                          <img src="img/roles/sentinela.png" alt="sentinela" />
+                        </span>
+                        <span class="role-title">Sentinela</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                </ul>
+                <button type="button" class="btn-outline-dark-custom w-100 mt-2">TODAS</button>
+              </section>
+
+              <section>
+                <h3 class="filter-section-title mb-2">COMUNICAÇÃO E CALL</h3>
+                <ul class="d-flex flex-column gap-2 list-unstyled mb-0">
+                  <li class="filter-comm-btn">
+                    <i class="bi bi-mic-fill"></i>
+                    <span>Call in-game</span>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li class="filter-comm-btn">
+                    <i class="bi bi-discord"></i>
+                    <span>Discord</span>
+                    <span class="check-circle"></span>
+                  </li>
+
+                  <li class="filter-comm-btn">
+                    <i class="bi bi-chat-dots-fill"></i>
+                    <span>Ping/chat</span>
+                    <span class="check-circle"></span>
+                  </li>
+                </ul>
+              </section>
+            </section>
+          </aside>
+          <!-- #endregion -->
+
+          <!-- #region [rgba(52, 152, 219, 0.15)] Grid de Cards de Jogadores -->
+          <section class="col-12 col-lg-8">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <article class="player-card p-3 d-flex flex-column gap-3">
+                  <header class="d-flex align-items-center justify-content-between">
+                    <figure class="d-flex align-items-center gap-3 mb-0">
+                      <img src="img/agents/omen.png" alt="Omen" class="player-avatar" />
+                      <figcaption>
+                        <h3 class="fs-5 fw-bold text-white m-0">PiaDaPança</h3>
+                      </figcaption>
+                    </figure>
+                    <span class="player-rank-badge d-flex align-items-center gap-1">
+                      <img src="img/ranks/platina.png" alt="Platina" width="18" height="18" />
+                      <span>Platina III</span>
+                    </span>
+                  </header>
+
+                  <section class="player-info-box p-2 rounded-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between pb-2 mb-2 border-bottom border-secondary border-opacity-25"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-clock text-primary"></i>
+                        <div class="d-flex flex-column lh-1">
+                          <small class="text-secondary mb-1">Disponibilidade</small>
+                          <span class="d-flex align-items-center gap-1">
+                            <span class="dot-available"></span>
+                            <span class="badge bg-danger">Disponível</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span
+                        class="comm-icons-pill d-flex align-items-center gap-2 px-3 py-1 rounded-2"
+                      >
+                        <i class="bi bi-mic-fill"></i>
+                        <i class="bi bi-discord"></i>
+                      </span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between px-1">
+                      <small class="text-secondary">Funções preferidas:</small>
+                      <span class="role-indicator d-flex align-items-center gap-2 text-white">
+                        <img src="img/roles/controlador.png" alt="controlador" />
+                        <img src="img/roles/sentinela.png" alt="sentinela" />
+                      </span>
+                    </div>
+                  </section>
+
+                  <ul class="player-info-box p-2 rounded-3 row g-2 list-unstyled mb-0 mx-0">
+                    <li class="col-3"><span class="agent-pill fav">Omen</span></li>
+                    <li class="col-3"><span class="agent-pill pref">Waylay</span></li>
+                    <li class="col-3"><span class="agent-pill">Chamber</span></li>
+                    <li class="col-3"><span class="agent-pill">Killjoy</span></li>
+                    <li class="col-3"><span class="agent-pill">Harbor</span></li>
+                    <li class="col-3"><span class="agent-pill">Jett</span></li>
+                    <li class="col-3"><span class="agent-pill">Miks</span></li>
+                    <li class="col-3"><span class="agent-pill">Cypher</span></li>
+                  </ul>
+
+                  <button
+                    type="button"
+                    class="w-100 btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  >
+                    <i class="bi bi-person-plus-fill me-2"></i>Copiar ID
+                  </button>
+                </article>
+              </div>
+
+              <div class="col">
+                <article class="player-card p-3 d-flex flex-column gap-3">
+                  <header class="d-flex align-items-center justify-content-between">
+                    <figure class="d-flex align-items-center gap-3 mb-0">
+                      <img src="img/agents/omen.png" alt="Omen" class="player-avatar" />
+                      <figcaption>
+                        <h3 class="fs-5 fw-bold text-white m-0">PiaDaPança</h3>
+                      </figcaption>
+                    </figure>
+                    <span class="player-rank-badge d-flex align-items-center gap-1">
+                      <img src="img/ranks/platina.png" alt="Platina" width="18" height="18" />
+                      <span>Platina III</span>
+                    </span>
+                  </header>
+
+                  <section class="player-info-box p-2 rounded-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between pb-2 mb-2 border-bottom border-secondary border-opacity-25"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-clock text-primary"></i>
+                        <div class="d-flex flex-column lh-1">
+                          <small class="text-secondary mb-1">Disponibilidade</small>
+                          <span class="d-flex align-items-center gap-1">
+                            <span class="dot-available"></span>
+                            <span class="badge bg-danger">Disponível</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span
+                        class="comm-icons-pill d-flex align-items-center gap-2 px-3 py-1 rounded-2"
+                      >
+                        <i class="bi bi-mic-fill"></i>
+                        <i class="bi bi-discord"></i>
+                      </span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between px-1">
+                      <small class="text-secondary">Funções preferidas:</small>
+                      <span class="role-indicator d-flex align-items-center gap-2 text-white">
+                        <img src="img/roles/controlador.png" alt="controlador" />
+                        <img src="img/roles/sentinela.png" alt="sentinela" />
+                      </span>
+                    </div>
+                  </section>
+
+                  <ul class="player-info-box p-2 rounded-3 row g-2 list-unstyled mb-0 mx-0">
+                    <li class="col-3"><span class="agent-pill fav">Omen</span></li>
+                    <li class="col-3"><span class="agent-pill pref">Waylay</span></li>
+                    <li class="col-3"><span class="agent-pill">Chamber</span></li>
+                    <li class="col-3"><span class="agent-pill">Killjoy</span></li>
+                    <li class="col-3"><span class="agent-pill">Harbor</span></li>
+                    <li class="col-3"><span class="agent-pill">Jett</span></li>
+                    <li class="col-3"><span class="agent-pill">Miks</span></li>
+                    <li class="col-3"><span class="agent-pill">Cypher</span></li>
+                  </ul>
+
+                  <button
+                    type="button"
+                    class="w-100 btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  >
+                    <i class="bi bi-person-plus-fill me-2"></i>Copiar ID
+                  </button>
+                </article>
+              </div>
+
+              <div class="col">
+                <article class="player-card p-3 d-flex flex-column gap-3">
+                  <header class="d-flex align-items-center justify-content-between">
+                    <figure class="d-flex align-items-center gap-3 mb-0">
+                      <img src="img/agents/omen.png" alt="Omen" class="player-avatar" />
+                      <figcaption>
+                        <h3 class="fs-5 fw-bold text-white m-0">PiaDaPança</h3>
+                      </figcaption>
+                    </figure>
+                    <span class="player-rank-badge d-flex align-items-center gap-1">
+                      <img src="img/ranks/platina.png" alt="Platina" width="18" height="18" />
+                      <span>Platina III</span>
+                    </span>
+                  </header>
+
+                  <section class="player-info-box p-2 rounded-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between pb-2 mb-2 border-bottom border-secondary border-opacity-25"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-clock text-primary"></i>
+                        <div class="d-flex flex-column lh-1">
+                          <small class="text-secondary mb-1">Disponibilidade</small>
+                          <span class="d-flex align-items-center gap-1">
+                            <span class="dot-available"></span>
+                            <span class="badge bg-danger">Disponível</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span
+                        class="comm-icons-pill d-flex gap-2 align-items-stretch px-3 py-1 rounded-2"
+                      >
+                        <i class="bi bi-mic-fill"></i>
+                        <i class="bi bi-discord"></i>
+                      </span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between px-1">
+                      <small class="text-secondary">Funções preferidas:</small>
+                      <span class="role-indicator d-flex align-items-center gap-2 text-white">
+                        <img src="img/roles/controlador.png" alt="controlador" />
+                        <img src="img/roles/sentinela.png" alt="sentinela" />
+                      </span>
+                    </div>
+                  </section>
+
+                  <ul class="player-info-box p-2 rounded-3 row g-2 list-unstyled mb-0 mx-0">
+                    <li class="col-3"><span class="agent-pill fav">Omen</span></li>
+                    <li class="col-3"><span class="agent-pill pref">Waylay</span></li>
+                    <li class="col-3"><span class="agent-pill">Chamber</span></li>
+                    <li class="col-3"><span class="agent-pill">Killjoy</span></li>
+                    <li class="col-3"><span class="agent-pill">Harbor</span></li>
+                    <li class="col-3"><span class="agent-pill">Jett</span></li>
+                    <li class="col-3"><span class="agent-pill">Miks</span></li>
+                    <li class="col-3"><span class="agent-pill">Cypher</span></li>
+                  </ul>
+
+                  <button
+                    type="button"
+                    class="w-100 btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  >
+                    <i class="bi bi-person-plus-fill me-2"></i>Copiar ID
+                  </button>
+                </article>
+              </div>
+
+              <div class="col">
+                <article class="player-card p-3 d-flex flex-column gap-3">
+                  <header class="d-flex align-items-center justify-content-between">
+                    <figure class="d-flex align-items-center gap-3 mb-0">
+                      <img src="img/agents/omen.png" alt="Omen" class="player-avatar" />
+                      <figcaption>
+                        <h3 class="fs-5 fw-bold text-white m-0">PiaDaPança</h3>
+                      </figcaption>
+                    </figure>
+                    <span class="player-rank-badge d-flex align-items-center gap-1">
+                      <img src="img/ranks/platina.png" alt="Platina" width="18" height="18" />
+                      <span>Platina III</span>
+                    </span>
+                  </header>
+
+                  <section class="player-info-box p-2 rounded-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between pb-2 mb-2 border-bottom border-secondary border-opacity-25"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-clock text-primary"></i>
+                        <div class="d-flex flex-column lh-1">
+                          <small class="text-secondary mb-1">Disponibilidade</small>
+                          <span class="d-flex align-items-center gap-1">
+                            <span class="dot-available"></span>
+                            <span class="badge bg-danger">Disponível</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span
+                        class="comm-icons-pill d-flex align-items-center gap-2 px-3 py-1 rounded-2"
+                      >
+                        <i class="bi bi-mic-fill"></i>
+                        <i class="bi bi-discord"></i>
+                      </span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between px-1">
+                      <small class="text-secondary">Funções preferidas:</small>
+                      <span class="role-indicator d-flex align-items-center gap-2 text-white">
+                        <img src="img/roles/controlador.png" alt="controlador" />
+                        <img src="img/roles/sentinela.png" alt="sentinela" />
+                      </span>
+                    </div>
+                  </section>
+
+                  <ul class="player-info-box p-2 rounded-3 row g-2 list-unstyled mb-0 mx-0">
+                    <li class="col-3"><span class="agent-pill fav">Omen</span></li>
+                    <li class="col-3"><span class="agent-pill pref">Waylay</span></li>
+                    <li class="col-3"><span class="agent-pill">Chamber</span></li>
+                    <li class="col-3"><span class="agent-pill">Killjoy</span></li>
+                    <li class="col-3"><span class="agent-pill">Harbor</span></li>
+                    <li class="col-3"><span class="agent-pill">Jett</span></li>
+                    <li class="col-3"><span class="agent-pill">Miks</span></li>
+                    <li class="col-3"><span class="agent-pill">Cypher</span></li>
+                  </ul>
+
+                  <button
+                    type="button"
+                    class="w-100 btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  >
+                    <i class="bi bi-person-plus-fill me-2"></i>Copiar ID
+                  </button>
+                </article>
+              </div>
+            </div>
+
+            <footer class="d-flex justify-content-center mt-4 pt-2">
+              <button type="button" class="btn-outline-dark-custom">
+                CARREGAR MAIS JOGADORES <i class="bi bi-chevron-down ms-1"></i>
+              </button>
+            </footer>
+          </section>
+          <!-- #endregion -->
+        </div>
+      </div>
+    </main>
+    <!-- #endregion -->
+
+    <!-- #region [rgba(74, 144, 226, 0.15)] Geral e Compartilhado -->
+    <footer class="login-footer mt-auto">
+      <div
+        class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <h2 class="footer-title fw-bold text-white fs-5">MY MATCH MATES</h2>
+          <span class="footer-sub text-muted-custom small">• Valorant Duo finder</span>
+        </div>
+        <p class="footer-copy text-muted-custom small">
+          © 2026 MY MATCH MATES. Não afiliado à Riot Games Inc. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+    <nav
+      class="mobile-bottom-nav fixed-bottom d-flex d-md-none align-items-center justify-content-around"
+      aria-label="Navegação mobile"
+    >
+      <a
+        href="index.html"
+        class="mobile-nav-item active d-flex flex-column align-items-center justify-content-center text-decoration-none"
+      >
+        <i class="bi bi-broadcast"></i>
+        <span>EXPLORAR</span>
+      </a>
+
+      <a
+        href="perfil.html"
+        class="mobile-nav-item d-flex flex-column align-items-center justify-content-center text-decoration-none"
+      >
+        <i class="bi bi-person-badge-fill"></i>
+        <span>MEU PERFIL</span>
+      </a>
+    </nav>
+    <!-- #endregion -->
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,970 +1,865 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Match Mates - Cadastro</title>
-
-    <!-- Google Fonts: Space Grotesk (Figma node-id 49:5024) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-
-    <!-- Estilos compilados via SASS (Bootstrap + Custom SCSS) -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <!-- #region [rgba(74, 144, 226, 0.15)] Configurações Globais -->
-    <div class="login-page-wrapper min-vh-100 d-flex flex-column justify-content-between">
-      <main
-        class="login-content flex-grow-1 d-flex align-items-center justify-content-center p-3 p-md-4"
+  <body class="background min-vh-100 d-flex flex-column justify-content-between">
+    <!-- #region [rgba(155, 89, 182, 0.15)] Fluxo de Cadastro -->
+    <main class="z-content flex-grow-1 d-flex align-items-center justify-content-center p-3 p-md-4">
+      <section
+        class="cadastro-card card border-0 rounded-4 shadow-lg p-3 p-md-4 d-flex flex-column align-items-stretch"
       >
-        <!-- #endregion -->
+        <ul class="nav nav-pills d-flex gap-2" id="cadastroPills" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active bg-warning"
+              id="tab-1"
+              data-bs-toggle="pill"
+              data-bs-target="#step-1"
+              type="button"
+              role="tab"
+            ></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link bg-warning"
+              id="tab-2"
+              data-bs-toggle="pill"
+              data-bs-target="#step-2"
+              type="button"
+              role="tab"
+            ></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link bg-warning"
+              id="tab-3"
+              data-bs-toggle="pill"
+              data-bs-target="#step-3"
+              type="button"
+              role="tab"
+            ></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link bg-warning"
+              id="tab-4"
+              data-bs-toggle="pill"
+              data-bs-target="#step-4"
+              type="button"
+              role="tab"
+            ></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link bg-warning"
+              id="tab-5"
+              data-bs-toggle="pill"
+              data-bs-target="#step-5"
+              type="button"
+              role="tab"
+            ></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link bg-warning"
+              id="tab-6"
+              data-bs-toggle="pill"
+              data-bs-target="#step-6"
+              type="button"
+              role="tab"
+            ></button>
+          </li>
+        </ul>
 
-        <!-- #region [rgba(155, 89, 182, 0.15)]-->
-        <section
-          class="cadastro-card card border-0 rounded-4 shadow-lg p-3 p-md-4 d-flex flex-column align-items-stretch"
-        >
-          <!-- nav pra mostra pro Roni -->
-          <ul class="nav nav-pills d-flex gap-2" id="cadastroPills" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active bg-warning"
-                id="tab-1"
-                data-bs-toggle="pill"
-                data-bs-target="#step-1"
-                type="button"
-                role="tab"
-              ></button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link bg-warning"
-                id="tab-2"
-                data-bs-toggle="pill"
-                data-bs-target="#step-2"
-                type="button"
-                role="tab"
-              ></button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link bg-warning"
-                id="tab-3"
-                data-bs-toggle="pill"
-                data-bs-target="#step-3"
-                type="button"
-                role="tab"
-              ></button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link bg-warning"
-                id="tab-4"
-                data-bs-toggle="pill"
-                data-bs-target="#step-4"
-                type="button"
-                role="tab"
-              ></button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link bg-warning"
-                id="tab-5"
-                data-bs-toggle="pill"
-                data-bs-target="#step-5"
-                type="button"
-                role="tab"
-              ></button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link bg-warning"
-                id="tab-6"
-                data-bs-toggle="pill"
-                data-bs-target="#step-6"
-                type="button"
-                role="tab"
-              ></button>
-            </li>
-          </ul>
-          <!-- #endregion -->
-          <!-- #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1 - Usuário e Senha -->
-          <div class="tab-content w-100" id="cadastroTabContent">
-            <div
-              class="tab-pane fade show active"
-              id="step-1"
-              role="tabpanel"
-              aria-labelledby="tab-1"
-            >
-              <div class="d-flex flex-column gap-3">
-                <div
-                  class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                >
-                  <span class="step-dot rounded-circle"></span>
-                  <span>PASSO 1 DE 6 • Cadastro de usuário</span>
-                </div>
-
-                <div class="step-header-box p-3 rounded-3">
-                  <h1 class="step-title fs-3 fw-bold mb-1">Nome de Usuário</h1>
-                  <p class="step-subtitle small text-muted mb-0">
-                    Preencha com seu nome de usuário e sua senha, nenhumas destas informações será
-                    revelada a outros usuários.
-                  </p>
-                </div>
-
-                <!-- Usuário -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
-                >
-                  <label for="cad-username" class="visually-hidden">Usuário</label>
-                  <input
-                    type="text"
-                    id="cad-username"
-                    name="username"
-                    class="form-control input-box-dark rounded-3 py-2 px-3 border-0 text-white"
-                    placeholder="usuário"
-                    autocomplete="username"
-                  />
-                  <div class="checklist-group mt-2">
-                    <div
-                      class="checklist-item d-flex align-items-center gap-2 small text-secondary"
-                    >
-                      <span
-                        class="check-icon rounded-circle d-flex align-items-center justify-content-center"
-                        >✕</span
-                      >
-                      <span>Nome de usuário disponível</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Senha -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <label for="cad-password" class="visually-hidden">Senha</label>
-                  <input
-                    type="password"
-                    id="cad-password"
-                    name="password"
-                    class="form-control input-box-dark rounded-3 py-2 px-3 border-0 text-white"
-                    placeholder="senha"
-                    autocomplete="new-password"
-                  />
-                  <div class="checklist-group mt-2 d-flex flex-column gap-1">
-                    <div
-                      class="checklist-item d-flex align-items-center gap-2 small text-secondary"
-                    >
-                      <span
-                        class="check-icon rounded-circle d-flex align-items-center justify-content-center"
-                        >✕</span
-                      >
-                      <span>Conter letras maiúsculas e minúsculas</span>
-                    </div>
-                    <div
-                      class="checklist-item d-flex align-items-center gap-2 small text-secondary"
-                    >
-                      <span
-                        class="check-icon rounded-circle d-flex align-items-center justify-content-center"
-                        >✕</span
-                      >
-                      <span>Não ser o seu nome de usuário</span>
-                    </div>
-                    <div
-                      class="checklist-item d-flex align-items-center gap-2 small text-secondary"
-                    >
-                      <span
-                        class="check-icon rounded-circle d-flex align-items-center justify-content-center"
-                        >✕</span
-                      >
-                      <span>Ter ao menos um número</span>
-                    </div>
-                    <div
-                      class="checklist-item d-flex align-items-center gap-2 small text-secondary"
-                    >
-                      <span
-                        class="check-icon rounded-circle d-flex align-items-center justify-content-center"
-                        >✕</span
-                      >
-                      <span>Ter ao menos um caractere especial (!@#$%&*,.)</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex flex-column align-items-center mt-2">
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-step-next fw-bold text-uppercase rounded-3 shadow"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-2"
-                  >
-                    Próximo
-                  </button>
-                  <a
-                    href="login.html"
-                    class="btn btn-link text-muted small mt-2 text-decoration-underline"
-                  >
-                    Já possui uma conta? Fazer login
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- #endregion -->
-            <!-- #region [rgba(26, 188, 156, 0.15)] Cadastro Passo 2 - Riot ID -->
-            <div class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="tab-2">
-              <div class="d-flex flex-column gap-3">
-                <div
-                  class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                >
-                  <span class="step-dot rounded-circle"></span>
-                  <span>PASSO 2 DE 6 • Cadastro de usuário</span>
-                </div>
-
-                <div class="step-header-box p-3 rounded-3">
-                  <h1 class="step-title fs-3 fw-bold mb-1">Riot ID</h1>
-                  <p class="step-subtitle small text-muted mb-0">
-                    Preencha o espaço com um ID riot válido, atente-se à espaços e à corretude da
-                    TAG. Essa informação é visível para outros usuários.
-                  </p>
-                </div>
-
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <label for="cad-riotid" class="visually-hidden">Riot ID</label>
-                  <input
-                    type="text"
-                    id="cad-riotid"
-                    name="riotId"
-                    class="form-control input-box-dark rounded-3 py-2 px-3 border-0 text-white"
-                    placeholder="ID#TAG"
-                  />
-                  <div class="checklist-group mt-2">
-                    <div
-                      class="checklist-item d-flex align-items-center gap-2 small text-secondary"
-                    >
-                      <span
-                        class="check-icon rounded-circle d-flex align-items-center justify-content-center"
-                        >✕</span
-                      >
-                      <span>ID Riot válido</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex flex-column align-items-center mt-2">
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-step-next fw-bold text-uppercase rounded-3 shadow"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-3"
-                  >
-                    Próximo
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-link text-muted small mt-2 text-decoration-underline border-0 bg-transparent"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-1"
-                  >
-                    Voltar à etapa anterior
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- #endregion -->
-            <!-- #region [rgba(241, 196, 15, 0.15)] Cadastro Passo 3 - Informações de Jogo e Matchmaking -->
-            <div class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="tab-3">
-              <div class="d-flex flex-column gap-3">
-                <div
-                  class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                >
-                  <span class="step-dot rounded-circle"></span>
-                  <span>PASSO 3 DE 6 • Cadastro de usuário</span>
-                </div>
-
-                <div class="step-header-box p-3 rounded-3">
-                  <h1 class="step-title fs-3 fw-bold mb-1">Informações de jogo</h1>
-                  <p class="step-subtitle small text-muted mb-0">
-                    Preencha cada campo com as informações referentes as sua características no
-                    Valorant. Essa informação é usada para encontrar outros jogadores e ser
-                    encontrado por eles.
-                  </p>
-                </div>
-
-                <!-- Elos -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center gap-2 fw-bold text-white mb-1"
-                  >
-                    <i class="bi bi-trophy-fill text-danger"></i>
-                    <span>Matchmaking</span>
-                  </div>
-                  <p class="section-desc small text-muted mb-2">
-                    Selecione o elo em que você está para encontrar jogadores do seu nível!
-                  </p>
-
-                  <div class="row row-cols-3 g-2 ranks-grid">
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/ferro.png" alt="Ferro" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Ferro</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/bronze.png" alt="Bronze" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Bronze</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/prata.png" alt="Prata" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Prata</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/ouro.png" alt="Ouro" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Ouro</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/platina.png" alt="Platina" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Platina</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item selected rounded-3 text-center p-2">
-                        <img src="img/ranks/diamante.png" alt="Diamante" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Diamante</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/ascendente.png" alt="Ascendente" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Ascendente</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/imortal.png" alt="Imortal" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Imortal</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="rank-card-item rounded-3 text-center p-2">
-                        <img src="img/ranks/radiante.png" alt="Radiante" class="img-fluid" />
-                        <span class="rank-name d-block small mt-1">Radiante</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Subdiv -->
-                  <div
-                    class="tier-division-bar d-flex align-items-center justify-content-center gap-2 mt-3"
-                  >
-                    <span class="division-label small text-muted">Posição atual:</span>
-                    <button type="button" class="btn btn-sm btn-division active">I</button>
-                    <button type="button" class="btn btn-sm btn-division">II</button>
-                    <button type="button" class="btn btn-sm btn-division">III</button>
-                  </div>
-                </div>
-
-                <!-- Funções -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center justify-content-between fw-bold text-white mb-2"
-                  >
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-people-fill text-danger"></i>
-                      <span>Funções preferidas</span>
-                    </div>
-                    <span class="badge rounded-pill bg-danger bg-opacity-25 text-danger small"
-                      >Até duas</span
-                    >
-                  </div>
-
-                  <div class="row row-cols-2 g-2 roles-grid">
-                    <div class="col">
-                      <div
-                        class="role-card-item selected rounded-3 p-2 d-flex align-items-center justify-content-between"
-                      >
-                        <div class="role-left d-flex align-items-center gap-2">
-                          <i class="bi bi-crosshair"></i>
-                          <span class="role-title small fw-bold">Duelista</span>
-                        </div>
-                        <span class="role-indicator rounded-circle"></span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div
-                        class="role-card-item selected rounded-3 p-2 d-flex align-items-center justify-content-between"
-                      >
-                        <div class="role-left d-flex align-items-center gap-2">
-                          <i class="bi bi-cloud-haze2"></i>
-                          <span class="role-title small fw-bold">Controlador</span>
-                        </div>
-                        <span class="role-indicator rounded-circle"></span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div
-                        class="role-card-item rounded-3 p-2 d-flex align-items-center justify-content-between"
-                      >
-                        <div class="role-left d-flex align-items-center gap-2">
-                          <i class="bi bi-compass"></i>
-                          <span class="role-title small fw-bold">Iniciador</span>
-                        </div>
-                        <span class="role-indicator rounded-circle"></span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div
-                        class="role-card-item rounded-3 p-2 d-flex align-items-center justify-content-between"
-                      >
-                        <div class="role-left d-flex align-items-center gap-2">
-                          <i class="bi bi-shield-check"></i>
-                          <span class="role-title small fw-bold">Sentinela</span>
-                        </div>
-                        <span class="role-indicator rounded-circle"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex flex-column align-items-center mt-2">
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-step-next fw-bold text-uppercase rounded-3 shadow"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-4"
-                  >
-                    Próximo
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-link text-muted small mt-2 text-decoration-underline border-0 bg-transparent"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-2"
-                  >
-                    Voltar à etapa anterior
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- #endregion -->
-            <!-- #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4 - Agentes Aptos -->
-            <div class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="tab-4">
-              <div class="d-flex flex-column gap-3">
-                <div
-                  class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                >
-                  <span class="step-dot rounded-circle"></span>
-                  <span>PASSO 4 DE 6 • Cadastro de usuário</span>
-                </div>
-                <div class="step-header-box p-3 rounded-3">
-                  <h1 class="step-title fs-3 fw-bold mb-1">Agentes Em jogo</h1>
-                  <p class="step-subtitle small text-muted mb-0">
-                    Selecione até oito agentes que você sabe ou gosta de jogar em partidas
-                    competitivas.
-                  </p>
-                </div>
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center justify-content-between fw-bold text-white mb-2"
-                  >
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-person-badge text-danger"></i>
-                      <span>Agentes Aptos</span>
-                    </div>
-                    <span class="badge rounded-pill bg-danger bg-opacity-25 text-danger small"
-                      >Até Oito</span
-                    >
-                  </div>
-                  <!-- Agentes -->
-                  <div class="row row-cols-4 g-2 agents-grid-scroll">
-                    <div class="col">
-                      <div class="agent-card-item selected rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle">✓</span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/reyna.png"
-                          alt="Reyna"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Reyna</p>
-                        <p class="agent-role text-muted mb-0">Duelista</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item selected rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle">✓</span>
-                        <img class="agent-avatar rounded-2" src="img/agents/omen.png" alt="Omen" />
-                        <p class="agent-name small fw-bold mb-0">Omen</p>
-                        <p class="agent-role text-muted mb-0">Controlador</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/jett.png" alt="Jett" />
-                        <p class="agent-name small fw-bold mb-0">Jett</p>
-                        <p class="agent-role text-muted mb-0">Duelista</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/viper.png"
-                          alt="Viper"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Viper</p>
-                        <p class="agent-role text-muted mb-0">Controlador</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/killjoy.png"
-                          alt="Killjoy"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Killjoy</p>
-                        <p class="agent-role text-muted mb-0">Sentinela</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/sova.png" alt="Sova" />
-                        <p class="agent-name small fw-bold mb-0">Sova</p>
-                        <p class="agent-role text-muted mb-0">Iniciador</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/fade.png" alt="Fade" />
-                        <p class="agent-name small fw-bold mb-0">Fade</p>
-                        <p class="agent-role text-muted mb-0">Iniciador</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/clove.png"
-                          alt="Clove"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Clove</p>
-                        <p class="agent-role text-muted mb-0">Controlador</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/raze.png" alt="Raze" />
-                        <p class="agent-name small fw-bold mb-0">Raze</p>
-                        <p class="agent-role text-muted mb-0">Duelista</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/iso.png" alt="Iso" />
-                        <p class="agent-name small fw-bold mb-0">Iso</p>
-                        <p class="agent-role text-muted mb-0">Duelista</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/phoenix.png"
-                          alt="Phoenix"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Phoenix</p>
-                        <p class="agent-role text-muted mb-0">Duelista</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/sage.png" alt="Sage" />
-                        <p class="agent-name small fw-bold mb-0">Sage</p>
-                        <p class="agent-role text-muted mb-0">Sentinela</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex flex-column align-items-center mt-2">
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-step-next fw-bold text-uppercase rounded-3 shadow"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-5"
-                  >
-                    Próximo
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-link text-muted small mt-2 text-decoration-underline border-0 bg-transparent"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-3"
-                  >
-                    Voltar à etapa anterior
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- #endregion -->
-            <!-- #region [rgba(233, 30, 99, 0.15)] Cadastro Passo 5 - Personalização (Preferidos e Favorito) -->
-            <div class="tab-pane fade" id="step-5" role="tabpanel" aria-labelledby="tab-5">
-              <div class="d-flex flex-column gap-3">
-                <div
-                  class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                >
-                  <span class="step-dot rounded-circle"></span>
-                  <span>PASSO 5 DE 6 • Cadastro de usuário</span>
-                </div>
-                <div class="step-header-box p-3 rounded-3">
-                  <h1 class="step-title fs-3 fw-bold mb-1">Personalização</h1>
-                  <p class="step-subtitle small text-muted mb-0">
-                    Essas informações são usadas para personalizar seu card de jogador nas abas de
-                    busca.
-                  </p>
-                </div>
-                <!-- Agentes Preferidos -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center justify-content-between fw-bold text-white mb-1"
-                  >
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-person-fill text-danger"></i>
-                      <span>Agentes Preferidos</span>
-                    </div>
-                    <span class="badge rounded-pill bg-danger bg-opacity-25 text-danger small"
-                      >Até Dois</span
-                    >
-                  </div>
-                  <p class="section-desc small text-muted mb-2">
-                    Selecione dois agentes que você tem preferência em jogar.
-                  </p>
-                  <div class="row row-cols-4 g-2">
-                    <div class="col">
-                      <div class="agent-card-item selected rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle">✓</span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/reyna.png"
-                          alt="Reyna"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Reyna</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item selected rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle">✓</span>
-                        <img class="agent-avatar rounded-2" src="img/agents/omen.png" alt="Omen" />
-                        <p class="agent-name small fw-bold mb-0">Omen</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/jett.png" alt="Jett" />
-                        <p class="agent-name small fw-bold mb-0">Jett</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/viper.png"
-                          alt="Viper"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Viper</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Agente Favorito -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center justify-content-between fw-bold text-white mb-1"
-                  >
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-star-fill text-warning"></i>
-                      <span>Agente Favorito</span>
-                    </div>
-                    <span class="badge rounded-pill bg-warning bg-opacity-25 text-warning small"
-                      >Um</span
-                    >
-                  </div>
-                  <p class="section-desc small text-muted mb-2">
-                    Selecione seu agente favorito, ele será usado como sua foto de perfil.
-                  </p>
-                  <div class="row row-cols-4 g-2">
-                    <div class="col">
-                      <div class="agent-card-item favorite selected rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle">★</span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/reyna.png"
-                          alt="Reyna"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Reyna</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/omen.png" alt="Omen" />
-                        <p class="agent-name small fw-bold mb-0">Omen</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img class="agent-avatar rounded-2" src="img/agents/jett.png" alt="Jett" />
-                        <p class="agent-name small fw-bold mb-0">Jett</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="agent-card-item rounded-3 p-1 text-center">
-                        <span class="agent-check-badge rounded-circle"></span>
-                        <img
-                          class="agent-avatar rounded-2"
-                          src="img/agents/viper.png"
-                          alt="Viper"
-                        />
-                        <p class="agent-name small fw-bold mb-0">Viper</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex flex-column align-items-center mt-2">
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-step-next fw-bold text-uppercase rounded-3 shadow"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-6"
-                  >
-                    Próximo
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-link text-muted small mt-2 text-decoration-underline border-0 bg-transparent"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-4"
-                  >
-                    Voltar à etapa anterior
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- #endregion -->
-            <!-- #region [rgba(0, 188, 212, 0.15)] Cadastro Passo 6 - Disponibilidade e Comunicação -->
-            <div class="tab-pane fade" id="step-6" role="tabpanel" aria-labelledby="tab-6">
-              <div class="d-flex flex-column gap-3">
-                <div
-                  class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start"
-                >
-                  <span class="step-dot rounded-circle"></span>
-                  <span>PASSO 6 DE 6 • Cadastro de usuário</span>
-                </div>
-                <div class="step-header-box p-3 rounded-3">
-                  <h1 class="step-title fs-3 fw-bold mb-1">Disponibilidade e comunicação</h1>
-                  <p class="step-subtitle small text-muted mb-0">
-                    Nos campos abaixo você deve selecionar os dias da semana e horários em que joga,
-                    além de definir quais métodos de comunição você costuma usar em jogo.
-                  </p>
-                </div>
-                <!-- Dias -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center gap-2 fw-bold text-white mb-2"
-                  >
-                    <i class="bi bi-calendar-week-fill text-danger"></i>
-                    <span>Dias ativos</span>
-                  </div>
-                  <div class="d-flex justify-content-between gap-1 w-100">
-                    <button type="button" class="btn btn-sm btn-day-pill rounded-2 flex-fill">
-                      Seg
-                    </button>
-                    <button type="button" class="btn btn-sm btn-day-pill rounded-2 flex-fill">
-                      Ter
-                    </button>
-                    <button type="button" class="btn btn-sm btn-day-pill rounded-2 flex-fill">
-                      Qua
-                    </button>
-                    <button type="button" class="btn btn-sm btn-day-pill rounded-2 flex-fill">
-                      Qui
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-day-pill active rounded-2 flex-fill"
-                    >
-                      Sex
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-day-pill active rounded-2 flex-fill"
-                    >
-                      Sáb
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-day-pill active rounded-2 flex-fill"
-                    >
-                      Dom
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Horários -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center gap-2 fw-bold text-white mb-1"
-                  >
-                    <i class="bi bi-clock-history text-danger"></i>
-                    <span>Horários e disponibilidade</span>
-                  </div>
-                  <p class="section-desc small text-muted mb-2">Faixa horária habitual:</p>
-                  <div class="row row-cols-2 g-2 slots-grid">
-                    <div class="col">
-                      <div class="slot-card-item rounded-3 p-2">
-                        <p class="slot-name small fw-bold mb-0">Manhã</p>
-                        <span class="slot-time text-muted small">08h - 12h</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="slot-card-item rounded-3 p-2">
-                        <p class="slot-name small fw-bold mb-0">Tarde</p>
-                        <span class="slot-time text-muted small">13h - 18h</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="slot-card-item active rounded-3 p-2">
-                        <p class="slot-name small fw-bold mb-0">Noite</p>
-                        <span class="slot-time text-muted small">19h - 00h</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="slot-card-item active rounded-3 p-2">
-                        <p class="slot-name small fw-bold mb-0">Madrugada</p>
-                        <span class="slot-time text-muted small">00h - 05h</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Comunicação -->
-                <div
-                  class="step-section-box card bg-transparent border border-secondary border-opacity-25 rounded-3 p-3"
-                >
-                  <div
-                    class="section-label d-flex align-items-center gap-2 fw-bold text-white mb-2"
-                  >
-                    <i class="bi bi-chat-quote-fill text-danger"></i>
-                    <span>Comunicação e bate papo</span>
-                  </div>
-                  <div class="row row-cols-3 g-2 comms-grid">
-                    <div class="col">
-                      <div class="comm-card-item active rounded-3 p-2 text-center">
-                        <i class="bi bi-mic-fill fs-5 d-block mb-1"></i>
-                        <p class="comm-name small fw-bold mb-0">Microfone</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="comm-card-item active rounded-3 p-2 text-center">
-                        <i class="bi bi-discord fs-5 d-block mb-1"></i>
-                        <p class="comm-name small fw-bold mb-0">Discord Call</p>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="comm-card-item rounded-3 p-2 text-center">
-                        <i class="bi bi-chat-dots-fill fs-5 d-block mb-1"></i>
-                        <p class="comm-name small fw-bold mb-0">Chat/ping</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex flex-column align-items-center mt-2">
-                  <a
-                    href="login.html"
-                    class="btn btn-danger btn-step-next fw-bold text-uppercase rounded-3 shadow text-decoration-none"
-                    role="button"
-                  >
-                    Finalizar
-                  </a>
-                  <button
-                    type="button"
-                    class="btn btn-link text-muted small mt-2 text-decoration-underline border-0 bg-transparent"
-                    data-bs-toggle="pill"
-                    data-bs-target="#step-5"
-                  >
-                    Voltar à etapa anterior
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- #endregion -->
-          </div>
-        </section>
-      </main>
-      <!-- #region [rgba(149, 165, 166, 0.15)] Rodapé -->
-      <footer class="login-footer py-4 px-4 px-md-5 border-top border-secondary border-opacity-10">
-        <div class="container-fluid px-0">
-          <div class="row align-items-center gy-2">
-            <div class="col-12 col-md-6 d-flex align-items-center gap-2">
-              <h2 class="footer-title fw-bold text-uppercase fs-5 mb-0 text-light">
-                MY MATCH MATES
-              </h2>
-              <span class="footer-sub small text-muted">• Valorant Duo finder</span>
-            </div>
-            <div class="col-12 col-md-6 text-md-end">
-              <p class="footer-copy mb-0 small text-muted">
-                © 2026 MY MATCH MATES. Não afiliado à Riot Games Inc. Todos os direitos reservados.
+        <div class="tab-content w-100" id="cadastroTabContent">
+          <!-- #region [rgba(231, 76, 60, 0.15)] Cadastro Passo 1 e 2 - Credenciais e Riot ID -->
+          <article
+            class="tab-pane fade show active"
+            id="step-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+          >
+            <div class="d-flex flex-column gap-3">
+              <p
+                class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start mb-0"
+              >
+                <span class="step-dot rounded-circle"></span>
+                <span>PASSO 1 DE 6 • Cadastro de usuário</span>
               </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- #endregion -->
-    </div>
 
-    <!-- Bootstrap Bundle com Popper JS -->
+              <header class="step-header-box p-3 rounded-3">
+                <h1 class="step-title fs-3 fw-bold">Nome de Usuário</h1>
+                <p class="step-subtitle small text-muted-custom">
+                  Preencha com seu nome de usuário e sua senha, nenhuma destas informações será
+                  revelada a outros usuários.
+                </p>
+              </header>
+
+              <fieldset
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <label for="cad-username" class="visually-hidden">Usuário</label>
+                <input
+                  type="text"
+                  id="cad-username"
+                  name="username"
+                  class="form-control input-box-dark"
+                  placeholder="usuário"
+                  autocomplete="username"
+                />
+                <ul class="list-unstyled mb-0 mt-2 ps-1">
+                  <li class="checklist-item d-flex align-items-center gap-2 small text-secondary">
+                    <span
+                      class="check-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >✕</span
+                    >
+                    <span>Nome de usuário disponível</span>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <label for="cad-password" class="visually-hidden">Senha</label>
+                <input
+                  type="password"
+                  id="cad-password"
+                  name="password"
+                  class="form-control input-box-dark"
+                  placeholder="senha"
+                  autocomplete="new-password"
+                />
+                <ul class="list-unstyled mb-0 mt-2 ps-1 d-flex flex-column gap-1">
+                  <li class="checklist-item d-flex align-items-center gap-2 small text-secondary">
+                    <span
+                      class="check-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >✕</span
+                    >
+                    <span>Conter letras maiúsculas e minúsculas</span>
+                  </li>
+                  <li class="checklist-item d-flex align-items-center gap-2 small text-secondary">
+                    <span
+                      class="check-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >✕</span
+                    >
+                    <span>Não ser o seu nome de usuário</span>
+                  </li>
+                  <li class="checklist-item d-flex align-items-center gap-2 small text-secondary">
+                    <span
+                      class="check-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >✕</span
+                    >
+                    <span>Ter ao menos um número</span>
+                  </li>
+                  <li class="checklist-item d-flex align-items-center gap-2 small text-secondary">
+                    <span
+                      class="check-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >✕</span
+                    >
+                    <span>Ter ao menos um caractere especial (!@#$%&*,.)</span>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <footer class="d-flex flex-column align-items-center mt-2">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-2"
+                >
+                  Próximo
+                </button>
+                <a
+                  href="login.html"
+                  class="btn btn-link text-muted-custom small mt-2 text-decoration-underline"
+                >
+                  Já possui uma conta? Fazer login
+                </a>
+              </footer>
+            </div>
+          </article>
+
+          <article class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="tab-2">
+            <div class="d-flex flex-column gap-3">
+              <p
+                class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start mb-0"
+              >
+                <span class="step-dot rounded-circle"></span>
+                <span>PASSO 2 DE 6 • Cadastro de usuário</span>
+              </p>
+
+              <header class="step-header-box p-3 rounded-3">
+                <h2 class="step-title fs-3 fw-bold">Riot ID</h2>
+                <p class="step-subtitle small text-muted-custom">
+                  Preencha o espaço com um ID Riot válido, atente-se a espaços e à corretude da TAG.
+                  Essa informação é visível para outros usuários.
+                </p>
+              </header>
+
+              <fieldset
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <label for="cad-riotid" class="visually-hidden">Riot ID</label>
+                <input
+                  type="text"
+                  id="cad-riotid"
+                  name="riotId"
+                  class="form-control input-box-dark"
+                  placeholder="ID#TAG"
+                />
+                <ul class="list-unstyled mb-0 mt-2 ps-1">
+                  <li class="checklist-item d-flex align-items-center gap-2 small text-secondary">
+                    <span
+                      class="check-icon rounded-circle d-flex align-items-center justify-content-center"
+                      >✕</span
+                    >
+                    <span>ID Riot válido</span>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <footer class="d-flex flex-column align-items-center mt-2">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-3"
+                >
+                  Próximo
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-link text-muted-custom small mt-2 text-decoration-underline border-0 bg-transparent"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-1"
+                >
+                  Voltar à etapa anterior
+                </button>
+              </footer>
+            </div>
+          </article>
+          <!-- #endregion -->
+
+          <!-- #region [rgba(241, 196, 15, 0.15)] Cadastro Passo 3 - Matchmaking e Funções -->
+          <article class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="tab-3">
+            <div class="d-flex flex-column gap-3">
+              <p
+                class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start mb-0"
+              >
+                <span class="step-dot rounded-circle"></span>
+                <span>PASSO 3 DE 6 • Cadastro de usuário</span>
+              </p>
+
+              <header class="step-header-box p-3 rounded-3">
+                <h2 class="step-title fs-3 fw-bold">Informações de jogo</h2>
+                <p class="step-subtitle small text-muted-custom">
+                  Preencha cada campo com as informações referentes às suas características no
+                  Valorant. Essa informação é usada para encontrar outros jogadores.
+                </p>
+              </header>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header class="section-label d-flex align-items-center gap-2 fw-bold text-white">
+                  <i class="bi bi-trophy-fill text-primary"></i>
+                  <h3 class="fs-6 fw-bold mb-0">Matchmaking</h3>
+                </header>
+                <p class="section-desc small text-muted-custom">
+                  Selecione o elo em que você está para encontrar jogadores do seu nível!
+                </p>
+
+                <ul class="row row-cols-3 g-2 list-unstyled mb-0">
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/ferro.png" alt="Ferro" />
+                      <figcaption class="rank-name">Ferro</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/bronze.png" alt="Bronze" />
+                      <figcaption class="rank-name">Bronze</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/prata.png" alt="Prata" />
+                      <figcaption class="rank-name">Prata</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/ouro.png" alt="Ouro" />
+                      <figcaption class="rank-name">Ouro</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/platina.png" alt="Platina" />
+                      <figcaption class="rank-name">Platina</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item selected mb-0">
+                      <img src="img/ranks/diamante.png" alt="Diamante" />
+                      <figcaption class="rank-name">Diamante</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/ascendente.png" alt="Ascendente" />
+                      <figcaption class="rank-name">Ascendente</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/imortal.png" alt="Imortal" />
+                      <figcaption class="rank-name">Imortal</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="rank-card-item mb-0">
+                      <img src="img/ranks/radiante.png" alt="Radiante" />
+                      <figcaption class="rank-name">Radiante</figcaption>
+                    </figure>
+                  </li>
+                </ul>
+
+                <nav class="tier-division-bar align-self-center px-3 py-2 rounded-3 mt-2">
+                  <span class="division-label">Posição atual:</span>
+                  <button type="button" class="btn-division">I</button>
+                  <button type="button" class="btn-division active">II</button>
+                  <button type="button" class="btn-division">III</button>
+                </nav>
+              </section>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header
+                  class="section-label d-flex align-items-center justify-content-between fw-bold text-white"
+                >
+                  <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-people-fill text-primary"></i>
+                    <h3 class="fs-6 fw-bold mb-0">Funções preferidas</h3>
+                  </span>
+                  <span class="badge rounded-pill bg-danger bg-opacity-25 text-primary small"
+                    >Até duas</span
+                  >
+                </header>
+
+                <ul class="row row-cols-2 g-2 list-unstyled mb-0">
+                  <li class="col">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-crosshair text-primary"></i>
+                        <span class="role-title">Duelista</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-cloud-haze2 text-primary"></i>
+                        <span class="role-title">Controlador</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-compass text-primary"></i>
+                        <span class="role-title">Iniciador</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="role-card-item">
+                      <span class="d-flex align-items-center gap-2">
+                        <i class="bi bi-shield-check text-primary"></i>
+                        <span class="role-title">Sentinela</span>
+                      </span>
+                      <span class="check-circle"></span>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <footer class="d-flex flex-column align-items-center mt-2">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-4"
+                >
+                  Próximo
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-link text-muted-custom small mt-2 text-decoration-underline border-0 bg-transparent"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-2"
+                >
+                  Voltar à etapa anterior
+                </button>
+              </footer>
+            </div>
+          </article>
+          <!-- #endregion -->
+
+          <!-- #region [rgba(52, 73, 94, 0.15)] Cadastro Passo 4 e 5 - Seleção de Agentes -->
+          <article class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="tab-4">
+            <div class="d-flex flex-column gap-3">
+              <p
+                class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start mb-0"
+              >
+                <span class="step-dot rounded-circle"></span>
+                <span>PASSO 4 DE 6 • Cadastro de usuário</span>
+              </p>
+
+              <header class="step-header-box p-3 rounded-3">
+                <h2 class="step-title fs-3 fw-bold">Agentes em Jogo</h2>
+                <p class="step-subtitle small text-muted-custom">
+                  Selecione até oito agentes que você sabe ou gosta de jogar em partidas
+                  competitivas.
+                </p>
+              </header>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header
+                  class="section-label d-flex align-items-center justify-content-between fw-bold text-white"
+                >
+                  <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-badge text-primary"></i>
+                    <h3 class="fs-6 fw-bold mb-0">Agentes Aptos</h3>
+                  </span>
+                  <span class="badge rounded-pill bg-danger bg-opacity-25 text-primary small"
+                    >Até Oito</span
+                  >
+                </header>
+
+                <ul class="row row-cols-4 g-2 agents-grid-scroll list-unstyled mb-0">
+                  <li class="col">
+                    <figure class="agent-card-item selected mb-0">
+                      <span class="agent-check-badge red">✓</span>
+                      <img class="agent-avatar" src="img/agents/reyna.png" alt="Reyna" />
+                      <figcaption class="agent-name">Reyna</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item selected mb-0">
+                      <span class="agent-check-badge red">✓</span>
+                      <img class="agent-avatar" src="img/agents/omen.png" alt="Omen" />
+                      <figcaption class="agent-name">Omen</figcaption>
+                      <span class="agent-role">Controlador</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/jett.png" alt="Jett" />
+                      <figcaption class="agent-name">Jett</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/viper.png" alt="Viper" />
+                      <figcaption class="agent-name">Viper</figcaption>
+                      <span class="agent-role">Controlador</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/killjoy.png" alt="Killjoy" />
+                      <figcaption class="agent-name">Killjoy</figcaption>
+                      <span class="agent-role">Sentinela</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/sova.png" alt="Sova" />
+                      <figcaption class="agent-name">Sova</figcaption>
+                      <span class="agent-role">Iniciador</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/fade.png" alt="Fade" />
+                      <figcaption class="agent-name">Fade</figcaption>
+                      <span class="agent-role">Iniciador</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/clove.png" alt="Clove" />
+                      <figcaption class="agent-name">Clove</figcaption>
+                      <span class="agent-role">Controlador</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/raze.png" alt="Raze" />
+                      <figcaption class="agent-name">Raze</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/iso.png" alt="Iso" />
+                      <figcaption class="agent-name">Iso</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/phoenix.png" alt="Phoenix" />
+                      <figcaption class="agent-name">Phoenix</figcaption>
+                      <span class="agent-role">Duelista</span>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/sage.png" alt="Sage" />
+                      <figcaption class="agent-name">Sage</figcaption>
+                      <span class="agent-role">Sentinela</span>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+
+              <footer class="d-flex flex-column align-items-center mt-2">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-5"
+                >
+                  Próximo
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-link text-muted-custom small mt-2 text-decoration-underline border-0 bg-transparent"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-3"
+                >
+                  Voltar à etapa anterior
+                </button>
+              </footer>
+            </div>
+          </article>
+
+          <article class="tab-pane fade" id="step-5" role="tabpanel" aria-labelledby="tab-5">
+            <div class="d-flex flex-column gap-3">
+              <p
+                class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start mb-0"
+              >
+                <span class="step-dot rounded-circle"></span>
+                <span>PASSO 5 DE 6 • Cadastro de usuário</span>
+              </p>
+
+              <header class="step-header-box p-3 rounded-3">
+                <h2 class="step-title fs-3 fw-bold">Personalização</h2>
+                <p class="step-subtitle small text-muted-custom">
+                  Essas informações são usadas para personalizar seu card de jogador nas abas de
+                  busca.
+                </p>
+              </header>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header
+                  class="section-label d-flex align-items-center justify-content-between fw-bold text-white"
+                >
+                  <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-fill text-primary"></i>
+                    <h3 class="fs-6 fw-bold mb-0">Agentes Preferidos</h3>
+                  </span>
+                  <span class="badge rounded-pill bg-danger bg-opacity-25 text-primary small"
+                    >Até Dois</span
+                  >
+                </header>
+                <p class="section-desc small text-muted-custom">
+                  Selecione dois agentes que você tem preferência em jogar.
+                </p>
+
+                <ul class="row row-cols-4 g-2 list-unstyled mb-0">
+                  <li class="col">
+                    <figure class="agent-card-item selected mb-0">
+                      <span class="agent-check-badge red">✓</span>
+                      <img class="agent-avatar" src="img/agents/reyna.png" alt="Reyna" />
+                      <figcaption class="agent-name">Reyna</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item selected mb-0">
+                      <span class="agent-check-badge red">✓</span>
+                      <img class="agent-avatar" src="img/agents/omen.png" alt="Omen" />
+                      <figcaption class="agent-name">Omen</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/jett.png" alt="Jett" />
+                      <figcaption class="agent-name">Jett</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/viper.png" alt="Viper" />
+                      <figcaption class="agent-name">Viper</figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header
+                  class="section-label d-flex align-items-center justify-content-between fw-bold text-white"
+                >
+                  <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <h3 class="fs-6 fw-bold mb-0">Agente Favorito</h3>
+                  </span>
+                  <span class="agent-stat-pill gold">Um</span>
+                </header>
+                <p class="section-desc small text-muted-custom">
+                  Selecione seu agente favorito, ele será usado como sua foto de perfil.
+                </p>
+
+                <ul class="row row-cols-4 g-2 list-unstyled mb-0">
+                  <li class="col">
+                    <figure class="agent-card-item favorite mb-0">
+                      <span class="agent-check-badge">★</span>
+                      <img class="agent-avatar" src="img/agents/reyna.png" alt="Reyna" />
+                      <figcaption class="agent-name">Reyna</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/omen.png" alt="Omen" />
+                      <figcaption class="agent-name">Omen</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/jett.png" alt="Jett" />
+                      <figcaption class="agent-name">Jett</figcaption>
+                    </figure>
+                  </li>
+                  <li class="col">
+                    <figure class="agent-card-item mb-0">
+                      <span class="agent-check-badge"></span>
+                      <img class="agent-avatar" src="img/agents/viper.png" alt="Viper" />
+                      <figcaption class="agent-name">Viper</figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+
+              <footer class="d-flex flex-column align-items-center mt-2">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-red fw-bold text-uppercase rounded-3 shadow"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-6"
+                >
+                  Próximo
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-link text-muted-custom small mt-2 text-decoration-underline border-0 bg-transparent"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-4"
+                >
+                  Voltar à etapa anterior
+                </button>
+              </footer>
+            </div>
+          </article>
+          <!-- #endregion -->
+
+          <!-- #region [rgba(0, 188, 212, 0.15)] Cadastro Passo 6 - Disponibilidade e Comunicação -->
+          <article class="tab-pane fade" id="step-6" role="tabpanel" aria-labelledby="tab-6">
+            <div class="d-flex flex-column gap-3">
+              <p
+                class="step-badge badge rounded-pill px-3 py-2 text-uppercase d-inline-flex align-items-center gap-2 align-self-start mb-0"
+              >
+                <span class="step-dot rounded-circle"></span>
+                <span>PASSO 6 DE 6 • Cadastro de usuário</span>
+              </p>
+
+              <header class="step-header-box p-3 rounded-3">
+                <h2 class="step-title fs-3 fw-bold">Disponibilidade e comunicação</h2>
+                <p class="step-subtitle small text-muted-custom">
+                  Nos campos abaixo você deve selecionar os dias da semana e horários em que joga,
+                  além de definir quais métodos de comunicação costuma usar.
+                </p>
+              </header>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header class="section-label d-flex align-items-center gap-2 fw-bold text-white">
+                  <i class="bi bi-calendar-week-fill text-primary"></i>
+                  <h3 class="fs-6 fw-bold mb-0">Dias ativos</h3>
+                </header>
+                <nav class="d-flex justify-content-between gap-1 w-100">
+                  <button type="button" class="btn-day-pill">Seg</button>
+                  <button type="button" class="btn-day-pill">Ter</button>
+                  <button type="button" class="btn-day-pill">Qua</button>
+                  <button type="button" class="btn-day-pill">Qui</button>
+                  <button type="button" class="btn-day-pill active">Sex</button>
+                  <button type="button" class="btn-day-pill active">Sáb</button>
+                  <button type="button" class="btn-day-pill active">Dom</button>
+                </nav>
+              </section>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header class="section-label d-flex align-items-center gap-2 fw-bold text-white">
+                  <i class="bi bi-clock-history text-primary"></i>
+                  <h3 class="fs-6 fw-bold mb-0">Horários e disponibilidade</h3>
+                </header>
+                <p class="section-desc small text-muted-custom">Faixa horária habitual:</p>
+                <ul class="row row-cols-2 g-2 list-unstyled mb-0">
+                  <li class="col">
+                    <div class="slot-card-item">
+                      <p class="slot-name">Manhã</p>
+                      <span class="slot-time">08h - 12h</span>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="slot-card-item">
+                      <p class="slot-name">Tarde</p>
+                      <span class="slot-time">13h - 18h</span>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="slot-card-item active">
+                      <p class="slot-name">Noite</p>
+                      <span class="slot-time">19h - 00h</span>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="slot-card-item active">
+                      <p class="slot-name">Madrugada</p>
+                      <span class="slot-time">00h - 05h</span>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <section
+                class="step-section-box card bg-warning border border-secondary border-opacity-25 rounded-3 p-3 d-flex flex-column"
+              >
+                <header class="section-label d-flex align-items-center gap-2 fw-bold text-white">
+                  <i class="bi bi-chat-quote-fill text-primary"></i>
+                  <h3 class="fs-6 fw-bold mb-0">Comunicação e bate-papo</h3>
+                </header>
+                <ul class="row row-cols-3 g-2 list-unstyled mb-0">
+                  <li class="col">
+                    <div class="comm-card-item active">
+                      <i class="bi bi-mic-fill"></i>
+                      <p class="comm-name">Microfone</p>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="comm-card-item active">
+                      <i class="bi bi-discord"></i>
+                      <p class="comm-name">Discord Call</p>
+                    </div>
+                  </li>
+                  <li class="col">
+                    <div class="comm-card-item">
+                      <i class="bi bi-chat-dots-fill"></i>
+                      <p class="comm-name">Chat/ping</p>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <footer class="d-flex flex-column align-items-center mt-2">
+                <a
+                  href="login.html"
+                  class="btn btn-danger btn-red fw-bold text-uppercase rounded-3 shadow text-decoration-none"
+                  role="button"
+                >
+                  Finalizar
+                </a>
+                <button
+                  type="button"
+                  class="btn btn-link text-muted-custom small mt-2 text-decoration-underline border-0 bg-transparent"
+                  data-bs-toggle="pill"
+                  data-bs-target="#step-5"
+                >
+                  Voltar à etapa anterior
+                </button>
+              </footer>
+            </div>
+          </article>
+          <!-- #endregion -->
+        </div>
+      </section>
+    </main>
+    <!-- #endregion -->
+
+    <!-- #region [rgba(74, 144, 226, 0.15)] Geral e Compartilhado -->
+    <footer class="login-footer border-top border-secondary border-opacity-10">
+      <div
+        class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <h2 class="footer-title fw-bold text-uppercase fs-5 text-light">MY MATCH MATES</h2>
+          <span class="footer-sub small text-muted-custom">• Valorant Duo finder</span>
+        </div>
+        <p class="footer-copy small text-muted-custom">
+          © 2026 MY MATCH MATES. Não afiliado à Riot Games Inc. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+    <!-- #endregion -->
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
