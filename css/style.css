@@ -12370,12 +12370,6 @@ body {
   transition: all 0.2s ease;
   user-select: none;
 }
-.role-card-item .val-role-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  display: inline-flex;
-  color: #ffffff;
-}
 .role-card-item .role-title {
   font-size: 0.75rem;
   font-weight: 700;
@@ -12406,6 +12400,12 @@ body {
   color: #ff4654;
   font-size: 0.8125rem;
   font-weight: 700;
+}
+.role-card-item img {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-flex;
+  color: #ffffff;
 }
 
 .agents-grid-scroll {
@@ -12507,6 +12507,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex: 1;
 }
 .btn-day-pill:hover {
   border-color: #ff525c;
@@ -12516,12 +12517,6 @@ body {
   border-color: #ff525c;
   color: #ffffff;
   box-shadow: 0 0 0.5rem rgba(255, 82, 92, 0.73);
-}
-@media (max-width: 768px) {
-  .btn-day-pill {
-    flex: 1;
-    margin: auto;
-  }
 }
 
 .slot-card-item {
