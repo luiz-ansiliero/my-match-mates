@@ -279,6 +279,7 @@ body {
     letter-spacing: 0.0313rem;
     text-transform: uppercase;
     margin: 0;
+    font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
   }
 
   .footer-sub,
