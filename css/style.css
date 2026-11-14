@@ -11950,8 +11950,6 @@ body {
 .btn-red:hover, .btn-red:focus {
   background-color: rgb(100%, 42.1568627451%, 45.5003966905%);
   color: #ffffff;
-  box-shadow: 0 0 1.25rem 0.125rem rgba(255, 82, 92, 0.73);
-  transform: translateY(-0.0625rem);
 }
 .btn-red:active {
   transform: translateY(0.0625rem);
